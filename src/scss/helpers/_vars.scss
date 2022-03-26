@@ -1,0 +1,28 @@
+// Параметры контейнера и блоков
+$maxWidth: 1440;
+$maxWidthContainer: 1200;
+$containerPadding: 10;
+
+// Параметры основного семейства шрифта
+$base-font: 'Times-New-Roman', sans-serif;
+$base-font-weight: 500;
+$base-font-size: 16px;
+$base-font-color: #000; 
+
+// Карта базовых брейкпоинтов
+$breakpoints: (
+  "sm": 576px,
+  "md": 768px,
+  "lg": 992px,
+  "xl": 1200px,
+  "xxl": 1400px
+);
+
+// Карта для определения максимальной ширины контейнера на брейкпоинте
+$container-max-widths: (
+  "sm": 540px,
+  "md": 720px,
+  "lg": 960px,
+  "xl": 1140px,
+  "xxl": $maxWidthContainer + px
+);

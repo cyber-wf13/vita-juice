@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('src/components/base/_head.html', {
+"title": "Default page title",
+"stylesPath": "../css/style.css",
+"faviconPath": "../"
+})
+
+<body>
+  @@include('src/components/base/_header.html')
+
+  <main class="main">
+    <h2>Basic template for a website</h2>
+  </main>
+
+  @@include('src/components/base/_footer.html')
+
+  @@include('src/components/base/_scripts.html', {
+  "scriptPath": "../js/main.bundle.js"
+  })
+</body>
+
+</html>
