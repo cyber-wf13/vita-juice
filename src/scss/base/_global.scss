@@ -27,11 +27,16 @@ body {
 .container {
 	margin: 0 auto;
 	padding: 0 $containerPadding + px;
+	width: 100%;
 
 	@each $size, $value in $container-max-widths {
 		@media (min-width: map.get($breakpoints, $size)){
 			max-width: $value;
 		}
+	}
+
+	&__header{
+		max-width: 1770px;
 	}
 }
 

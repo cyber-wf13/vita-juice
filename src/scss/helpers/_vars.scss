@@ -1,13 +1,16 @@
+// Переменные основных цветов
+$c-font: #2B2A29;
+
 // Параметры контейнера и блоков
-$maxWidth: 1440;
-$maxWidthContainer: 1200;
+$maxWidth: 1920;
+$maxWidthContainer: 1360;
 $containerPadding: 10;
 
 // Параметры основного семейства шрифта
-$base-font: 'Times-New-Roman', sans-serif;
-$base-font-weight: 500;
-$base-font-size: 16px;
-$base-font-color: #000; 
+$base-font: 'Bahnschrift', sans-serif;
+$base-font-weight: 400;
+$base-font-size: 20px;
+$base-font-color: $c-font; 
 
 // Карта базовых брейкпоинтов
 $breakpoints: (

@@ -17,7 +17,9 @@
 @import 'components/global/title';
 
 // Стили для компонентов
-// @import 'components/';
+@import 'components/menuProducts';
+@import 'components/navMenu';
+@import 'components/logo';
 
 // Стили для шаблонов страниц
 @import 'layouts/header';

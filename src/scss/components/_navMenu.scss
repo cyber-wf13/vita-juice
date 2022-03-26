@@ -1,0 +1,13 @@
+.nav-menu{
+  ul{ 
+    display: flex;
+    list-style: none;
+    padding: 0;
+  }
+
+  ul > li {
+    &:not(&:last-child){
+      margin-right: 55px;
+    }
+  }
+}
