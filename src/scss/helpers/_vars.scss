@@ -1,6 +1,9 @@
 // Переменные основных цветов
 $c-font: #2B2A29;
-
+$c-hover: #FECF3D;
+:root{
+  --juice-color: #F29114;
+}
 // Параметры контейнера и блоков
 $maxWidth: 1920;
 $maxWidthContainer: 1360;
