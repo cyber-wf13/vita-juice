@@ -1,0 +1,9 @@
+.hero{
+  border-top: 8px dashed $c-font;
+  border-bottom: 8px dashed $c-font;
+
+  &__slide-content{
+    min-height: 775px;
+    background: url(../img/hero/slider-1.png) no-repeat top center / cover;
+  }
+}

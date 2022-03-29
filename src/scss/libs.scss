@@ -1,1 +1,8 @@
+@import 'helpers/mixins';
+@import 'helpers/vars';
+
 @import 'swiper/swiper';
+@import 'swiper/modules/navigation/navigation';
+@import 'swiper/modules/pagination/pagination';
+
+@import 'vendors/swiper';
