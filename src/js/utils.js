@@ -14,3 +14,14 @@ export function createElement(selector, className) {
 
 return elem;  
 }
+
+export function createTitle(text, className){
+  const title = createElement("h2", "title");
+  title.textContent = text;
+
+  if (className){
+    title.classList.add(className);
+  }
+
+  return title;
+}

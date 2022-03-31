@@ -1,5 +1,6 @@
 import {containerHeader} from './components/header';
 import {hero} from './components/hero/hero';
+import {productsSect} from './components/ourProduction';
 import Swiper, { Navigation, Pagination } from 'swiper';
 
 const body = document.body;
@@ -18,7 +19,7 @@ const carouselParams = {
 }
 
 const render = ()=>{
-  body.append(containerHeader, hero);
+  body.append(containerHeader, hero, productsSect);
   new Swiper(".swiper", carouselParams);
 }
 
