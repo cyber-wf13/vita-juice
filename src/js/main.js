@@ -2,6 +2,7 @@ import { containerHeader } from './components/header';
 import { hero } from './components/hero/hero';
 import { productsSect } from './components/ourProduction';
 import { bestSection } from './components/bestsellers/bestsellers';
+import { deliverySect } from './components/delivery/delivery';
 import Swiper, { Navigation, Pagination } from 'swiper';
 
 const body = document.body;
@@ -30,7 +31,7 @@ const carouselBestsellersParams = {
 };
 
 const render = () => {
-  body.append(containerHeader, hero, productsSect, bestSection);
+  body.append(containerHeader, hero, productsSect, bestSection, deliverySect);
   new Swiper(".swiper-hero", carouselHeroParams);
   new Swiper(".swiper-bestsellers", carouselBestsellersParams);
 }
