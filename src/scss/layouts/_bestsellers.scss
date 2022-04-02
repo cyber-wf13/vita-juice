@@ -1,0 +1,11 @@
+.bestsellers{
+  &__title{
+    margin: 35px 0;
+  }
+
+  &__wrapper{
+    border-top: 8px dashed $c-font;
+    border-bottom: 8px dashed $c-font;
+    padding: 60px 0;
+  }
+}
