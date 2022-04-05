@@ -59,22 +59,28 @@ let deliveryZonesItems = createDeliveryZone(infoDeliveryZone),
   deliveryWaysItems = createBlockOptions(infoDeliveryWays);
 
 
-deliveryBlockMap.src = "img/delivery/map.png";
+deliveryBlockMap.src = "img/delivery/map.jpg";
 
 const deliveryBlockPaymentWrapper = deliveryBlock.cloneNode(true),
   deliveryBlockWaysWrapper = deliveryBlock.cloneNode(true),
   deliveryBlockZonesWrapper = deliveryBlock.cloneNode(true),
   deliveryBlockZones = deliveryBlockContent.cloneNode(true),
   deliveryBlockPayment = deliveryBlockContent.cloneNode(true),
-  deliveryBlockWays = deliveryBlockContent.cloneNode(true);
+  deliveryBlockWays = deliveryBlockContent.cloneNode(true),
+  deliveryBlockTitleZones = deliveryBlockTitle.cloneNode(true),
+  deliveryBlockTitleWays = deliveryBlockTitle.cloneNode(true),
+  deliveryBlockTitlePayment = deliveryBlockTitle.cloneNode(true);
 
 deliveryBlockZones.append(...deliveryZonesItems);
+deliveryBlockTitleZones.textContent = "Зона доставки";
 deliveryBlockPayment.append(...deliveryPaymentItems);
+deliveryBlockTitlePayment.textContent = "варианты оплаты";
 deliveryBlockWays.append(...deliveryWaysItems);
+deliveryBlockTitleWays.textContent = "способы доставки";
 
-deliveryBlockZonesWrapper.append(deliveryBlockTitle.cloneNode(true), deliveryBlockZones, deliveryBlockMap);
-deliveryBlockPaymentWrapper.append(deliveryBlockTitle.cloneNode(true), deliveryBlockPayment);
-deliveryBlockWaysWrapper.append(deliveryBlockTitle.cloneNode(true), deliveryBlockWays);
+deliveryBlockZonesWrapper.append(deliveryBlockTitleZones, deliveryBlockZones, deliveryBlockMap);
+deliveryBlockPaymentWrapper.append(deliveryBlockTitlePayment, deliveryBlockPayment);
+deliveryBlockWaysWrapper.append(deliveryBlockTitleWays, deliveryBlockWays);
 
 deliveryWrapper.append(deliveryBlockZonesWrapper, deliveryBlockPaymentWrapper, deliveryBlockWaysWrapper);
 deliverySect.append(deliveryTitle, deliveryWrapper);

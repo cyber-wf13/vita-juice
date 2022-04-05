@@ -24,6 +24,8 @@
 @import 'components/cabinet';
 @import 'components/productCard';
 @import 'components/bestCard';
+@import 'components/deliveryZone';
+@import 'components/deliveryCard';
 
 // Стили для шаблонов страниц
 @import 'layouts/header';
@@ -31,4 +33,5 @@
 @import 'layouts/hero';
 @import 'layouts/ourProduction';
 @import 'layouts/bestsellers';
+@import 'layouts/delivery';
 
