@@ -26,6 +26,8 @@
 @import 'components/bestCard';
 @import 'components/deliveryZone';
 @import 'components/deliveryCard';
+@import 'components/loyaltyList';
+@import 'components/loyaltyCard';
 
 // Стили для шаблонов страниц
 @import 'layouts/header';
@@ -34,4 +36,5 @@
 @import 'layouts/ourProduction';
 @import 'layouts/bestsellers';
 @import 'layouts/delivery';
+@import 'layouts/loyalty';
 

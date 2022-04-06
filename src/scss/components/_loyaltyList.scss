@@ -1,0 +1,31 @@
+.loyalty-list{
+  display: flex;
+  flex-direction: column;
+
+  &__item{
+    display: flex;
+    align-items: center;
+
+    &:not(&:last-child){
+      margin-bottom: 30px;
+    }
+  }
+
+  &__wrapper-img{
+    border-radius: 50%;
+    height: 83px;
+    width: 83px;
+    background-color: $c-bg;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 25px;
+  }
+
+  &__text{
+    font-size: 30px;
+    line-height: 1em;
+  }
+
+
+}
