@@ -1,0 +1,35 @@
+.social{
+  background-color: $c-bg;
+  border-top: 8px dashed $c-font;
+  padding: 45px 0;
+
+  &__container{
+    max-width: 1770px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  &__title{
+    color: #fff;
+  }
+
+  &__wrapper{
+    display: flex;
+  }
+
+  &__link{
+    display: inline-block;
+    height: 85px;
+    width: 85px;
+    background-color: #fff;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:not(&:last-child){
+      margin-right: 35px;
+    }
+  }
+}

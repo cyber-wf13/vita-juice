@@ -1,0 +1,10 @@
+.list-links{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__item{
+    font-size: 30px;
+    line-height: 1em;
+  }
+}

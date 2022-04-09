@@ -1,0 +1,12 @@
+.list-info{
+  &__item{
+    font-size: 30px;
+    line-height: 1em;
+
+    &:not(&:last-child){
+      width: 100%;
+      max-width: 385px;
+      margin-bottom: 5px;
+    }
+  }
+}

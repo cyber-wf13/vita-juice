@@ -3,7 +3,8 @@ import { hero } from './components/hero/hero';
 import { productsSect } from './components/ourProduction';
 import { bestSection } from './components/bestsellers/bestsellers';
 import { deliverySect } from './components/delivery/delivery';
-import {loyaltySect} from './components/loyalty/loyalty';
+import { loyaltySect } from './components/loyalty/loyalty';
+import { footer } from './components/footer';
 import Swiper, { Navigation, Pagination } from 'swiper';
 
 const body = document.body;
@@ -32,7 +33,7 @@ const carouselBestsellersParams = {
 };
 
 const render = () => {
-  body.append(containerHeader, hero, productsSect, bestSection, deliverySect, loyaltySect);
+  body.append(containerHeader, hero, productsSect, bestSection, deliverySect, loyaltySect, footer);
   new Swiper(".swiper-hero", carouselHeroParams);
   new Swiper(".swiper-bestsellers", carouselBestsellersParams);
 }
