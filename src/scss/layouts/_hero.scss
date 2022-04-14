@@ -2,8 +2,38 @@
   border-top: 8px dashed $c-font;
   border-bottom: 8px dashed $c-font;
 
+  @media (max-width: (map.get($breakpoints, 'lg') - 0.02)){
+    border-top: 6px dashed $c-font;
+    border-bottom: 6px dashed $c-font;
+  }
+
+  @media (max-width: (map.get($breakpoints, 'sm') - 0.02)){
+    border-top: 4px dashed $c-font;
+    border-bottom: 4px dashed $c-font;
+  }
+
   &__slide-content{
     min-height: 775px;
-    background: url(../img/hero/slider-1.png) no-repeat top center / cover;
+    background: url(../img/hero/slider-1.png) no-repeat top center / 100% 100%;
+
+    @media (max-width: (map.get($breakpoints, 'xxl') - 0.02)){
+      min-height: 575px;
+    }
+
+    @media (max-width: (map.get($breakpoints, 'xl') - 0.02)){
+      min-height: 475px;
+    }
+
+    @media (max-width: (map.get($breakpoints, 'lg') - 0.02)){
+      min-height: 375px;
+    }
+
+    @media (max-width: (map.get($breakpoints, 'md') - 0.02)){
+      min-height: 275px;
+    }
+
+    @media (max-width: (map.get($breakpoints, 'sm') - 0.02)){
+      min-height: 175px;
+    }
   }
 }

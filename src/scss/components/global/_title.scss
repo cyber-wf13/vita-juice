@@ -1,6 +1,6 @@
 .title{
   font-weight: 400;
-  font-size: 80px;
+  @include adaptiv-value(font-size, 80, 40, 1);
   line-height: 1em;
   text-align: center;
   text-transform: uppercase;

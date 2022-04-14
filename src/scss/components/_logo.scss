@@ -5,4 +5,10 @@
   height: 165px;
   width: 150px;
   z-index: 10;
+
+  @media (max-width: (map.get($custom-breakpoints, '<1600') - 0.02)){
+    position: relative;
+    top: auto;
+    left: auto;
+  }
 }

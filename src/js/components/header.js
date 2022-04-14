@@ -1,4 +1,4 @@
-import {createElement} from '../utils';
+import {createElement, browserBreakpoint} from '../utils';
 
 const createNavList = (linksParams, colorsArray)=>{
   const list = document.createElement("ul");
@@ -59,7 +59,13 @@ topHeaderWrapper.prepend(cart, cabinet);
 navProducts.prepend(navProductsList);
 navMenu.prepend(navMenuList);
 bottomHeaderWrapper.prepend(navProducts ,navMenu);
-headerWrapper.prepend(topHeaderWrapper, bottomHeaderWrapper);
+
+if (browserBreakpoint == "md" || browserBreakpoint == "sm" ){
+  headerWrapper.innerHTML = "Mobile version";
+}else{
+  headerWrapper.prepend(topHeaderWrapper, bottomHeaderWrapper);
+}
+
 header.prepend(logo, headerWrapper);
 containerHeader.prepend(header);
 

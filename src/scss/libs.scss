@@ -1,3 +1,6 @@
+// Стандартная библиотека sass
+@use "sass:map";
+
 @import 'helpers/mixins';
 @import 'helpers/vars';
 

@@ -1,5 +1,5 @@
-.nav-products{
-  ul{
+.nav-products {
+  ul {
     display: flex;
     list-style: none;
     padding: 0;
@@ -10,8 +10,8 @@
     padding-bottom: 35px;
     transition: color 0.3s ease-out;
     cursor: pointer;
-    
-    &::before{
+
+    &::before {
       content: "";
       position: absolute;
       bottom: 0;
@@ -19,20 +19,24 @@
       transform: translateX(-50%);
       height: 25px;
       width: 25px;
-      background-color: #D9DADA;
+      background-color: #d9dada;
       border-radius: 50%;
       transition: background-color 0.3s ease-out;
     }
 
-    &:not(&:last-child){
+    &:not(&:last-child) {
       margin-right: 35px;
+
+      @media (max-width: (map.get($breakpoints, "xl") - 0.02)) {
+        margin-right: 20px;
+      }
     }
 
-    @media (any-hover:hover){
-      &:hover{
+    @media (any-hover: hover) {
+      &:hover {
         color: var(--juice-color);
-      
-        &::before{
+
+        &::before {
           background-color: var(--juice-color);
         }
       }

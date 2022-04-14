@@ -7,5 +7,9 @@
     border-top: 8px dashed $c-font;
     border-bottom: 8px dashed $c-font;
     padding: 60px 0;
+
+    @media (max-width: (map.get($breakpoints, 'sm') - 0.02)){
+      padding: 40px 0;
+    }
   }
 }

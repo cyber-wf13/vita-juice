@@ -7,6 +7,10 @@
     top: 50%;
     background: url(../img/slider-arrow.svg);
 
+    @media (max-width: (map.get($breakpoints, 'lg') - 0.02)){
+      display: none;
+    }
+
     &::after {
       display: none;
     }

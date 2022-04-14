@@ -1,0 +1,53 @@
+.products {
+  &__title {
+    margin: 35px 0;
+  }
+
+  &__wrapper {
+    border-top: 8px dashed $c-font;
+    border-bottom: 8px dashed $c-font;
+    min-height: 720px;
+    background: url(../img/products/main-bg.png) no-repeat bottom left / auto 100%, #6b9d52;
+    padding: 55px 75px 45px 0;
+
+    @media (max-width: (map.get($custom-breakpoints, '<1600') - 0.02)){
+      padding: 55px 10px 45px 0;
+    }
+
+    @media (max-width: (map.get($breakpoints, 'xl') - 0.02)){
+      background: #6b9d52;
+      min-height: auto;
+      padding: 45px 10px 45px;
+    }
+
+    @media (max-width: (map.get($breakpoints, 'sm') - 0.02)){
+      padding: 25px 10px 45px;
+    }
+  }
+
+  &__card-items {
+    margin-left: auto;
+    width: 60%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+
+    @media (max-width: (map.get($breakpoints, 'xl') - 0.02)){
+      width: 100%;
+      margin-left: 0;
+      justify-content: center;
+    }
+  }
+
+  &__card {
+    margin: 0 10px 45px 0;
+
+    @media (max-width: (map.get($breakpoints, 'md') - 0.02)){
+      margin: 0 20px 25px 0;
+    }
+
+    @media (max-width: (map.get($breakpoints, 'sm') - 0.02)){
+      margin: 0 5px 20px 0;
+    }
+  }
+}

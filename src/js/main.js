@@ -1,3 +1,4 @@
+import {body, browserBreakpoint} from './utils';
 import { containerHeader } from './components/header';
 import { hero } from './components/hero/hero';
 import { productsSect } from './components/ourProduction';
@@ -7,7 +8,6 @@ import { loyaltySect } from './components/loyalty/loyalty';
 import { footer } from './components/footer';
 import Swiper, { Navigation, Pagination } from 'swiper';
 
-const body = document.body;
 
 const carouselHeroParams = {
   loop: true,
@@ -25,17 +25,30 @@ const carouselHeroParams = {
 const carouselBestsellersParams = {
   loop: true,
   modules: [Navigation],
-  slidesPerView: 3,
+  slidesPerView: 1,
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
   },
+  breakpoints: {
+    1400: {
+      slidesPerView: 3,
+    },
+    992: {
+      slidesPerView: 2,
+    }
+  }
 };
 
 const render = () => {
-  body.append(containerHeader, hero, productsSect, bestSection, deliverySect, loyaltySect, footer);
+  body.prepend(hero, productsSect, bestSection);
+  // body.append(containerHeader, hero, productsSect, bestSection, deliverySect, loyaltySect, footer);
   new Swiper(".swiper-hero", carouselHeroParams);
-  new Swiper(".swiper-bestsellers", carouselBestsellersParams);
+  let carousellBestseller = new Swiper(".swiper-bestsellers", carouselBestsellersParams);
+
+  if (browserBreakpoint == "md" || browserBreakpoint == "sm"){
+    carousellBestseller.navigation.destroy();
+  }
 }
 
 render();

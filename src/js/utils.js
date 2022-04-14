@@ -1,3 +1,6 @@
+export const body = document.body,
+  browserBreakpoint = window.getComputedStyle(body, ":after").getPropertyValue("content").replaceAll(/"/g, "");
+
 export function createElement(selector, className) {
 
   if (selector === "") {
@@ -8,18 +11,18 @@ export function createElement(selector, className) {
 
   if (typeof className == "string") {
     elem.classList.add(className);
-  }else if (typeof className == "object"){
+  } else if (typeof className == "object") {
     elem.classList.add(...className);
   }
 
-return elem;  
+  return elem;
 }
 
-export function createTitle(text, className){
+export function createTitle(text, className) {
   const title = createElement("h2", "title");
   title.textContent = text;
 
-  if (className){
+  if (className) {
     title.classList.add(className);
   }
 

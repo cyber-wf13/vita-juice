@@ -10,6 +10,15 @@ body {
 	color: $base-font-color;
 }
 
+@each $size, $value in $container-max-widths {
+	@media (min-width: map.get($breakpoints, $size)) {
+		body::after {
+			content: "#{$size}";
+			display: none;
+		}
+	}
+}
+
 .main {
 	flex: 1 0 auto;
 }
@@ -30,12 +39,12 @@ body {
 	width: 100%;
 
 	@each $size, $value in $container-max-widths {
-		@media (min-width: map.get($breakpoints, $size)){
+		@media (min-width: map.get($breakpoints, $size)) {
 			max-width: $value;
 		}
 	}
 
-	&__header{
+	&__header {
 		max-width: 1770px;
 	}
 }
