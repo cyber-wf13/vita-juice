@@ -1,6 +1,6 @@
 .list-info{
   &__item{
-    font-size: 30px;
+    @include adaptiv-value(font-size, 30, 18, 1);
     line-height: 1em;
 
     &:not(&:last-child){

@@ -41,7 +41,7 @@ const carouselBestsellersParams = {
 };
 
 const render = () => {
-  body.prepend(hero, productsSect, bestSection);
+  body.prepend(hero, productsSect, bestSection, deliverySect, loyaltySect, footer);
   // body.append(containerHeader, hero, productsSect, bestSection, deliverySect, loyaltySect, footer);
   new Swiper(".swiper-hero", carouselHeroParams);
   let carousellBestseller = new Swiper(".swiper-bestsellers", carouselBestsellersParams);

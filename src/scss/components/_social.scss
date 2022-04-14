@@ -8,14 +8,42 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media (max-width: (map.get($breakpoints, 'xxl') - 0.02)){
+      flex-direction: column;
+    }
   }
   
   &__title{
+    @include adaptiv-value(font-size, 80, 30, 1);
     color: #fff;
+    text-align: left;
+
+    @media (max-width: (map.get($breakpoints, 'xxl') - 0.02)){
+      text-align: center;
+    }
+
+    @media (max-width: (map.get($breakpoints, 'lg') - 0.02)){
+      max-width: 640px;
+    }
+
+    @media (max-width: (map.get($breakpoints, 'md') - 0.02)){
+      max-width: 480px;
+    }
+
+    @media (max-width: (map.get($breakpoints, 'sm') - 0.02)){
+      max-width: 390px;
+    }
   }
 
   &__wrapper{
     display: flex;
+
+    @media (max-width: (map.get($breakpoints, 'xxl') - 0.02)){
+      margin-top: 25px;
+      justify-content: space-around;
+      width: 100%;
+    }
   }
 
   &__link{
@@ -28,8 +56,26 @@
     justify-content: center;
     align-items: center;
 
+    @media (max-width: (map.get($breakpoints, 'xxl') - 0.02)){
+      margin: 0 10px;
+    }
+
+    @media (max-width: (map.get($breakpoints, 'lg') - 0.02)){
+      height: 75px;
+      width: 75px;
+    }
+
+    @media (max-width: (map.get($breakpoints, 'sm') - 0.02)){
+      height: 65px;
+      width: 65px;
+      padding: 10px;
+    }
+
     &:not(&:last-child){
       margin-right: 35px;
+      @media (max-width: (map.get($breakpoints, 'xxl') - 0.02)){
+        margin: 0 10px;
+      }
     }
   }
 }

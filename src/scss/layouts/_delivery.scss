@@ -4,6 +4,12 @@
     &:not(&:last-child){
       margin-bottom: 40px;
     }
+
+    @media (max-width: (map.get($breakpoints, 'lg') - 0.02)){
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
   }
 
   &__title{
@@ -15,20 +21,38 @@
     border-bottom: 8px dashed $c-font;
     background: url(../img/delivery/delivery-bg.png) no-repeat bottom right / auto, linear-gradient(291.53deg, #FECF3D 3.56%, #6B9D52 69.58%);
     padding: 45px 75px;
+
+    @media (max-width: (map.get($breakpoints, 'xl') - 0.02)){
+      background-image: linear-gradient(291.53deg, #FECF3D 3.56%, #6B9D52 69.58%);
+      padding: 45px 15px;
+    }
   }
 
   &__block-title{
-    font-size: 40px;
+    @include adaptiv-value(font-size, 40, 30, 1);
     font-weight: 400;
     color: #fff;
     line-height: 1em;
     text-transform: uppercase;
     margin-bottom: 25px;
+
+    @media (max-width: (map.get($breakpoints, 'lg') - 0.02)){
+      text-align: center;
+    }
   }
 
   &__block-content{
     display: flex;
     justify-content: flex-start;
+
+    @media (max-width: (map.get($breakpoints, 'lg') - 0.02)){
+      justify-content: space-between;
+    }
+
+    @media (max-width: (map.get($breakpoints, 'md') - 0.02)){
+      flex-direction: column;
+
+    }
   }
 
   &__block-map{
@@ -37,14 +61,36 @@
   }
 
   &__zone{
+    @media (max-width: (map.get($breakpoints, 'lg') - 0.02)){
+      margin: 0 10px;
+    }
     &:not(&:first-child){
-      margin-left: 150px;
+      margin: 0 0 0 150px;
+      @media (max-width: (map.get($breakpoints, 'lg') - 0.02)){
+        margin: 0 10px;
+      }
+
+      @media (max-width: (map.get($breakpoints, 'md') - 0.02)){
+        margin: 25px 10px 0;
+      }
     }
   }
 
   &__card{
+    @media (max-width: (map.get($breakpoints, 'lg') - 0.02)){
+      margin: 0 10px;
+    }
+
     &:not(&:first-child){
       margin-left: 120px;
+
+      @media (max-width: (map.get($breakpoints, 'lg') - 0.02)){
+        margin: 0 10px;
+      }
+
+      @media (max-width: (map.get($breakpoints, 'md') - 0.02)){
+        margin: 25px 10px 0;
+      }
     }
   }
 }

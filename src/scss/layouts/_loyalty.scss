@@ -14,12 +14,26 @@
     justify-content: space-between;
     align-items: center;
     padding: 50px 0 55px;
+
+    @media (max-width: (map.get($breakpoints, 'xxl') - 0.02)){
+      flex-direction: column;
+    }
+  }
+
+  &__content{
+    @media (max-width: (map.get($breakpoints, 'xxl') - 0.02)){
+      margin-top: 40px;
+    }
   }
 
   &__sub-title{
     font-weight: 400;
-    font-size: 40px;
+    @include adaptiv-value(font-size, 40, 30, 1);
     text-transform: uppercase;
+
+    @media (max-width: (map.get($breakpoints, 'xxl') - 0.02)){
+      text-align: center;
+    }
   }
 
   &__list{
@@ -28,12 +42,24 @@
 
   &__block{
     display: flex;
+
+    @media (max-width: (map.get($breakpoints, 'xxl') - 0.02)){
+      justify-content: space-between;
+    }
+
+    @media (max-width: (map.get($breakpoints, 'md') - 0.02)){
+      flex-direction: column;
+    }
   }
 
   &__text{
     font-weight: 400;
-    font-size: 40px;
+    @include adaptiv-value(font-size, 40, 30, 1);
     text-transform: uppercase;
+
+    @media (max-width: (map.get($breakpoints, 'md') - 0.02)){
+      text-align: center;
+    }
   }
 
   &__btn{
@@ -46,6 +72,11 @@
     margin-left: 35px;
     cursor: pointer;
     transition: all 0.3s ease-out;
+
+    @media (max-width: (map.get($breakpoints, 'md') - 0.02)){
+      margin: 25px auto 0;
+      max-width: 182px;
+    }
 
     @media (any-hover:hover){
       &:hover{

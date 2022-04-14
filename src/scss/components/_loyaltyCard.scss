@@ -8,6 +8,10 @@
     justify-content: space-between;
     align-items: center;
     padding: 45px 50px 30px;
+
+    @media (max-width: (map.get($breakpoints, 'md') - 0.02)){
+      padding: 25px 30px;
+    }
   }
 
   &__logo-wrapper{
@@ -18,6 +22,11 @@
   &__logo-img{
     height: 77px;
     width: 77px;
+
+    @media (max-width: (map.get($breakpoints, 'md') - 0.02)){
+      height: 50px;
+      width: 50px;
+    }
   }
 
   &__logo-text{
@@ -26,6 +35,12 @@
     line-height: 1.2em;
     color: #fff;
     max-width: 105px;
+
+    @media (max-width: (map.get($breakpoints, 'md') - 0.02)){
+      font-size: 25px;
+      margin-left: 10px;
+      max-width: 60px;
+    }
   }
 
   &__balance{
@@ -36,6 +51,10 @@
     line-height: 1em;
     color: #fff;
     text-transform: uppercase;
+
+    @media (max-width: (map.get($breakpoints, 'md') - 0.02)){
+      font-size: 18px;
+    }
   }
 
   &__balance-text{
@@ -45,6 +64,7 @@
 
   &__img{
     width: 100%;
+    @include adaptiv-value(height, 210, 120, 1);
   }
 
   &__info{
@@ -52,6 +72,11 @@
     font-size: 20px;
     line-height: 1em;
     margin: 24px 48px;
+
+    @media (max-width: (map.get($breakpoints, 'md') - 0.02)){
+      margin: 15px 30px;
+      font-size: 18px;
+    }
   }
 
   &__info-title{
@@ -75,5 +100,15 @@
     max-width: 345px;
     width: 100%;
     margin: 190px auto 50px;
+
+    @media (max-width: (map.get($breakpoints, 'md') - 0.02)){
+      margin: 120px auto 40px;
+      max-width: 270px;
+    }
+
+    @media (max-width: (map.get($breakpoints, 'sm') - 0.02)){
+      margin: 95px auto 30px;
+      max-width: 200px;
+    }
   }
 }
