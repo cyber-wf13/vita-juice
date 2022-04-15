@@ -1,12 +1,15 @@
-import {body, browserBreakpoint} from './utils';
-import { containerHeader } from './components/header';
-import { hero } from './components/hero/hero';
-import { productsSect } from './components/ourProduction';
-import { bestSection } from './components/bestsellers/bestsellers';
-import { deliverySect } from './components/delivery/delivery';
-import { loyaltySect } from './components/loyalty/loyalty';
-import { footer } from './components/footer';
-import Swiper, { Navigation, Pagination } from 'swiper';
+import { body, browserBreakpoint } from './utils';
+// import { containerHeader } from './components/header';
+// import { hero } from './old-components/hero/hero';
+// import { productsSect } from './components/ourProduction';
+// import { bestSection } from './components/bestsellers/bestsellers';
+// import { deliverySect } from './components/delivery/delivery';
+// import { loyaltySect } from './components/loyalty/loyalty';
+// import { footer } from './components/footer';
+import { Navigation, Pagination } from 'swiper';
+
+import { Skelet } from './classSkelet';
+import { Carousel } from './classCarousel';
 
 
 const carouselHeroParams = {
@@ -41,14 +44,25 @@ const carouselBestsellersParams = {
 };
 
 const render = () => {
-  body.prepend(hero, productsSect, bestSection, deliverySect, loyaltySect, footer);
-  // body.append(containerHeader, hero, productsSect, bestSection, deliverySect, loyaltySect, footer);
-  new Swiper(".swiper-hero", carouselHeroParams);
-  let carousellBestseller = new Swiper(".swiper-bestsellers", carouselBestsellersParams);
+  const hero = new Skelet("div", "hero");
+  const heroCarousel = new Carousel(carouselHeroParams, "swiper-hero");
 
-  if (browserBreakpoint == "md" || browserBreakpoint == "sm"){
-    carousellBestseller.navigation.destroy();
-  }
+  const heroCarouselContent = [new Skelet("div", "hero__slide-content").elem, new Skelet("div", "hero__slide-content").elem, new Skelet("div", "hero__slide-content").elem];
+
+  heroCarousel.createSlide(heroCarouselContent);
+
+  hero.appendItems(heroCarousel.carouselSkelet);
+  
+  body.prepend(hero.elem);
+  
+  heroCarousel.init();
+
+  // new Swiper(".swiper-hero", carouselHeroParams);
+  // let carousellBestseller = new Swiper(".swiper-bestsellers", carouselBestsellersParams);
+
+  // if (browserBreakpoint == "md" || browserBreakpoint == "sm"){
+  //   carousellBestseller.navigation.destroy();
+  // }
 }
 
 render();

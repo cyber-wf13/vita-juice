@@ -52,6 +52,7 @@
 
   .swiper-pagination {
     bottom: 55px !important;
+    z-index: 1;
 
     @media (max-width: (map.get($breakpoints, "lg") - 0.02)) {
       bottom: 25px !important;
