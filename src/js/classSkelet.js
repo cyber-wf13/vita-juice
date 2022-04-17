@@ -9,31 +9,59 @@ export class Skelet {
   createElement() {
     const elem = document.createElement(this.selector);
 
+    if (this.className === false || this.className == " " || this.className == "") {
+      return elem;
+    }
+
     if (typeof this.className == "string") {
       elem.classList.add(this.className);
     } else if (typeof this.className == "object") {
+      this.className.forEach((className, idx) => {
+        if (className === false || className == " " || className == "") {
+          this.className.splice(idx, 1);
+        }
+      });
+
       elem.classList.add(...this.className);
     }
 
     return elem;
   }
 
-  createTitle(text, className) {
-    const title = createElement("h2", "title");
-    title.textContent = text;
+  // createCarcass(titleText, prefix = "skelet") {
+  //   let section = new Skelet("section", `${prefix}`),
+  //   sectionWrapper = new Skelet("div", `${prefix}__wrapper`),
+  //   sectionTitle = section.createTitle(titleText, `${prefix}__title`);
 
-    if (className) {
-      title.classList.add(className);
-    }
+  //   return [section, sectionTitle, sectionWrapper];
+  // }
+
+  createTitle(titleText, className = " ") {
+    const title = new Skelet("h2", ["title", className]);
+    title.setContent(titleText);
 
     return title;
   }
 
-  appendItems(items) {
+  insertItems(items, prepend = true) {
     if (Array.isArray(items)) {
-      this.elem.append(...items);
+      items.forEach((item) => {
+        prepend ? this.elem.append(item.elem) : this.elem.prepend(item.elem);
+      })
     } else {
-      this.elem.append(items);
+      prepend ? this.elem.append(items.elem) : this.elem.prepend(items.elem);
     }
+  }
+
+  setAttr(attr, value) {
+    this.elem.setAttribute(attr, value);
+  }
+
+  setContent(text) {
+    this.elem.textContent = text;
+  }
+
+  setHtml(html){
+    this.elem.innerHTML = html;
   }
 }

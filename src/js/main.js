@@ -7,9 +7,15 @@ import { body, browserBreakpoint } from './utils';
 // import { loyaltySect } from './components/loyalty/loyalty';
 // import { footer } from './components/footer';
 import { Navigation, Pagination } from 'swiper';
+import { heroImgPaths, productCardInfo, bestsellersCardInfo, deliveryBlockInfo } from './infoOfServer';
 
 import { Skelet } from './classSkelet';
 import { Carousel } from './classCarousel';
+import { Hero } from './components/hero/classHero';
+import { Production } from './components/production/classProduction';
+import { SkeletSect } from './classSkeletSect';
+import { Bestsellers } from './components/bestsellers/classBestsellers';
+import { Delivery } from './components/delivery/classDelivery';
 
 
 const carouselHeroParams = {
@@ -43,26 +49,48 @@ const carouselBestsellersParams = {
   }
 };
 
+
+
 const render = () => {
-  const hero = new Skelet("div", "hero");
+  const hero = new Hero("div", "hero");
   const heroCarousel = new Carousel(carouselHeroParams, "swiper-hero");
+  heroCarousel.createSlide(hero.createSliderImg(heroImgPaths));
+  hero.insertItems(heroCarousel.carouselSkelet);
 
-  const heroCarouselContent = [new Skelet("div", "hero__slide-content").elem, new Skelet("div", "hero__slide-content").elem, new Skelet("div", "hero__slide-content").elem];
+  const production = new Production("наша продукция", "products");
+  production.sectionWrapper.insertItems(production.getProductCard(productCardInfo));
 
-  heroCarousel.createSlide(heroCarouselContent);
+  const bestsellers = new Bestsellers("хиты продаж", "bestsellers");
+  const bestsellersCarousel = new Carousel(carouselBestsellersParams, "swiper-bestsellers");
+  bestsellers.sectionWrapper.insertItems(bestsellersCarousel.carouselSkelet);
+  bestsellersCarousel.createSlide(bestsellers.getBestsellersCard(bestsellersCardInfo));
 
-  hero.appendItems(heroCarousel.carouselSkelet);
-  
-  body.prepend(hero.elem);
-  
+  const delivery = new Delivery("доставка и оплата", "delivery");
+  const deliveryBlockZones = delivery.setDeliveryContent("Зона доставки",
+    delivery.createDeliveryZones(deliveryBlockInfo.deliveryZone)),
+    deliveryBlockPayment = delivery.setDeliveryContent("варианты оплаты",
+      delivery.createDeliveryOptions(deliveryBlockInfo.deliveryPayment)),
+    deliveryBlockWays = delivery.setDeliveryContent("способы доставки",
+      delivery.createDeliveryOptions(deliveryBlockInfo.deliveryWays));
+
+  const deliveryBlockZonesMap = new Skelet("img", "delivery__block-map");
+  deliveryBlockZonesMap.setAttr("src", "img/delivery/map.jpg");
+  deliveryBlockZones.insertItems(deliveryBlockZonesMap);
+
+  delivery.sectionWrapper.insertItems([deliveryBlockZones, deliveryBlockPayment, deliveryBlockWays]);
+
+  body.prepend(hero.elem, production.collectElements(), bestsellers.collectElements(), delivery.collectElements());
+
   heroCarousel.init();
+  bestsellersCarousel.init();
 
+  // loyalty, footer
   // new Swiper(".swiper-hero", carouselHeroParams);
   // let carousellBestseller = new Swiper(".swiper-bestsellers", carouselBestsellersParams);
 
-  // if (browserBreakpoint == "md" || browserBreakpoint == "sm"){
-  //   carousellBestseller.navigation.destroy();
-  // }
+  if (browserBreakpoint == "md" || browserBreakpoint == "sm" || browserBreakpoint == "xs") {
+    bestsellersCarousel.swiperObj.navigation.destroy();
+  }
 }
 
 render();

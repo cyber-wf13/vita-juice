@@ -12,9 +12,9 @@
     border-bottom: 4px dashed $c-font;
   }
 
-  &__slide-content{
+  &__slide-content,
+  &__slide-img{
     min-height: 775px;
-    background: url(../img/hero/slider-1.png) no-repeat top center / 100% 100%;
 
     @media (max-width: (map.get($breakpoints, 'xxl') - 0.02)){
       min-height: 575px;
@@ -36,4 +36,6 @@
       min-height: 175px;
     }
   }
+
+
 }

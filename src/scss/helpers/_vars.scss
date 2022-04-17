@@ -18,6 +18,7 @@ $base-font-color: $c-font;
 
 // Карта базовых брейкпоинтов
 $breakpoints: (
+  "xs": 320px,
   "sm": 576px,
   "md": 768px,
   "lg": 992px,

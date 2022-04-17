@@ -11,8 +11,8 @@ export class Carousel {
       this.className.push(className);
     }
 
-    this.carouselSkelet = new Skelet("div", this.className).elem;
-    this.carouselWrapperSkelet = new Skelet("div", "swiper-wrapper").elem;
+    this.carouselSkelet = new Skelet("div", this.className);
+    this.carouselWrapperSkelet = new Skelet("div", "swiper-wrapper");
     this.createCarcass();
   }
   
@@ -22,7 +22,7 @@ export class Carousel {
   }
 
   createCarcass() {
-    this.carouselSkelet.append(this.carouselWrapperSkelet);
+    this.carouselSkelet.insertItems(this.carouselWrapperSkelet);
 
     if (this.swiperParams.hasOwnProperty('modules')) {
       this.swiperParams.modules.forEach((moduleFunc) => {
@@ -30,14 +30,14 @@ export class Carousel {
 
         switch (moduleName) {
           case "Pagination":
-            const swiperPagination = new Skelet("div", "swiper-pagination").elem;
-            this.carouselSkelet.append(swiperPagination);
+            const swiperPagination = new Skelet("div", "swiper-pagination");
+            this.carouselSkelet.insertItems(swiperPagination);
             break;
 
           case "Navigation":
-            const swiperPrevBtn = new Skelet("div", "swiper-button-prev").elem,
-              swiperNextBtn = new Skelet("div", "swiper-button-next").elem;
-            this.carouselSkelet.append(swiperPrevBtn, swiperNextBtn);
+            const swiperPrevBtn = new Skelet("div", "swiper-button-prev"),
+              swiperNextBtn = new Skelet("div", "swiper-button-next");
+            this.carouselSkelet.insertItems([swiperPrevBtn, swiperNextBtn]);
             break;
 
           default:
@@ -51,8 +51,8 @@ export class Carousel {
     innerItems.forEach((item) => {
       let swiperSlide = new Skelet("div", "swiper-slide");
 
-      swiperSlide.appendItems(item);
-      this.carouselWrapperSkelet.append(swiperSlide.elem);
+      swiperSlide.insertItems(item);
+      this.carouselWrapperSkelet.insertItems(swiperSlide);
     });
 
   }

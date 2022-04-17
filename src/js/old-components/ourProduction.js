@@ -6,7 +6,7 @@ const title = createTitle("наша продукция", "products__title"),
   productsCardItems = createElement("div", "products__card-items");
 
 
-let productCardInfo = { "соки": "img/products/cards/juice.png", "миксы": "img/products/cards/mix.png", "смузи": "img/products/cards/smoothies.png", "ласси": "img/products/cards/lassy.png", "детокс": "img/products/cards/detox.png", "боулы": "img/products/cards/bouly.png", "салаты": "img/products/cards/salads.png", "здоровая еда": "img/products/cards/eat.png" }
+let productCardInfo = { "соки": "img/products/cards/juice.png", "миксы": "img/products/cards/mix.png", "смузи": "img/products/cards/smoothies.png", "ласси": "img/products/cards/lassy.png", "детокс": "img/products/cards/detox.png", "боулы": "img/products/cards/bouly.png", "салаты": "img/products/cards/salads.png", "здоровая еда": "img/products/cards/eat.png" };
 
 for (const productCardInfoTitle in productCardInfo) {
   let productCard = createElement("div", ["product-card", "products__card"]),

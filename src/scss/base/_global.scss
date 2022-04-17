@@ -10,7 +10,8 @@ body {
 	color: $base-font-color;
 }
 
-@each $size, $value in $container-max-widths {
+
+@each $size, $value in $breakpoints {
 	@media (min-width: map.get($breakpoints, $size)) {
 		body::after {
 			content: "#{$size}";
