@@ -1,14 +1,5 @@
 .loyalty{
 
-  &__title{
-    margin: 35px 0;
-  }
-
-  &__wrapper{
-    border-top: 8px dashed $c-font;
-    border-bottom: 8px dashed $c-font;
-  }
-
   &__wrapper-inner{
     display: flex;
     justify-content: space-between;

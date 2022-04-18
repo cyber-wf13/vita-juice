@@ -70,5 +70,42 @@ export const deliveryBlockInfo = {
       "text": "Можете сами забрать заказ, указав это при оформлении заказа."
     },
   ]
-
 }
+
+export const loyaltyListInfo = [{
+  "text": "Всегда рядом в вашем телефоне",
+  "pathImg": "img/loyalty/list/phone.svg"
+},
+{
+  "text": "Участвуй в акциях и получай подарки",
+  "pathImg": "img/loyalty/list/gift.svg"
+}, {
+  "text": "Каждый 5-й напиток бесплатно",
+  "pathImg": "img/loyalty/list/drink.svg"
+}];
+
+export const footerInfo = {
+  infoText: ["Все права пренадлежат ООО «Компания Вита Джус", "ИНН 12456789/ОГРН123456789833"],
+  infoLink: [{
+    "text": "Публичная оферта",
+    "link": "#"
+  },
+  {
+    "text": "Политика конфиденциальности",
+    "link": "#"
+  }],
+  infoBonus: [{
+    "text": "Пользовательское соглашение",
+    "link": "#"
+  },
+  {
+    "text": "Бонусная программа",
+    "link": "#"
+  }]
+}
+
+export const socialInfo = [
+  { "pathImg": "img/social/vk.svg", "link": "#" },
+  { "pathImg": "img/social/instagram.svg", "link": "#" },
+  { "pathImg": "img/social/facebook.svg", "link": "#" }
+]

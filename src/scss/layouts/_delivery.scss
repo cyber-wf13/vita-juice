@@ -12,13 +12,7 @@
     }
   }
 
-  &__title{
-    margin: 35px 0;
-  }
-
   &__wrapper{
-    border-top: 8px dashed $c-font;
-    border-bottom: 8px dashed $c-font;
     background: url(../img/delivery/delivery-bg.png) no-repeat bottom right / auto, linear-gradient(291.53deg, #FECF3D 3.56%, #6B9D52 69.58%);
     padding: 45px 75px;
 

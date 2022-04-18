@@ -1,21 +1,17 @@
 import { body, browserBreakpoint } from './utils';
-// import { containerHeader } from './components/header';
-// import { hero } from './old-components/hero/hero';
-// import { productsSect } from './components/ourProduction';
-// import { bestSection } from './components/bestsellers/bestsellers';
-// import { deliverySect } from './components/delivery/delivery';
-// import { loyaltySect } from './components/loyalty/loyalty';
-// import { footer } from './components/footer';
 import { Navigation, Pagination } from 'swiper';
-import { heroImgPaths, productCardInfo, bestsellersCardInfo, deliveryBlockInfo } from './infoOfServer';
+import { heroImgPaths, productCardInfo, bestsellersCardInfo, 
+  deliveryBlockInfo, loyaltyListInfo, footerInfo, socialInfo } from './infoOfServer';
 
 import { Skelet } from './classSkelet';
 import { Carousel } from './classCarousel';
 import { Hero } from './components/hero/classHero';
 import { Production } from './components/production/classProduction';
-import { SkeletSect } from './classSkeletSect';
 import { Bestsellers } from './components/bestsellers/classBestsellers';
 import { Delivery } from './components/delivery/classDelivery';
+import { Loyalty } from './components/loyalty/classLoyalty';
+import { Footer } from './components/base/classFooter';
+import { Social } from './components/base/classSocial';
 
 
 const carouselHeroParams = {
@@ -79,14 +75,43 @@ const render = () => {
 
   delivery.sectionWrapper.insertItems([deliveryBlockZones, deliveryBlockPayment, deliveryBlockWays]);
 
-  body.prepend(hero.elem, production.collectElements(), bestsellers.collectElements(), delivery.collectElements());
+  const loyalty = new Loyalty("Наша система лояльности", "loyalty"),
+
+    loyaltyListContent = loyalty.createListContent(loyaltyListInfo),
+    loyaltyList = loyalty.createList(loyaltyListContent, "loyalty-list", "loyalty", true),
+
+    loyaltyBlockText = loyalty.createBlockText(),
+    loyaltyBlockContent = loyalty.createContentBlockInner([loyalty.subTitle, loyaltyList, loyaltyBlockText], "div", "loyalty__content"),
+
+    loyaltyCard = loyalty.createCard(),
+    loyaltyWrapperInner = loyalty.createContentBlockInner([loyaltyCard, loyaltyBlockContent], "div", "loyalty__wrapper-inner");
+
+  loyalty.container.insertItems(loyaltyWrapperInner);
+  loyalty.sectionWrapper.insertItems(loyalty.container);
+
+  const footer = new Footer("footer", "footer"),
+
+  footerListInfoContent = footer.createListInfoContent(footerInfo.infoText),
+  footerListInfo = footer.createList(footerListInfoContent, "list-info", false, true, "footer__list-info"),
+
+  footerListLinksContent = footer.createListContent(footerInfo.infoLink),
+  footerListLinks = footer.createList(footerListLinksContent, "list-links", false, true, "footer__list-links"),
+
+  footerListBonusContent = footer.createListContent(footerInfo.infoBonus),
+  footerListBonus = footer.createList(footerListBonusContent, "list-links", false, true, "footer__list-links");
+
+  footer.listWrapper.insertItems([footerListInfo, footerListLinks, footerListBonus]);
+
+  const social = new Social("div", "social");
+  social.createSocialLinks(socialInfo);
+  const socialCollected = social.collectSocial();
+
+  body.prepend(hero.elem, production.collectElements(), bestsellers.collectElements(), delivery.collectElements(),
+    loyalty.collectElements(), footer.collectFooter(socialCollected));
 
   heroCarousel.init();
   bestsellersCarousel.init();
 
-  // loyalty, footer
-  // new Swiper(".swiper-hero", carouselHeroParams);
-  // let carousellBestseller = new Swiper(".swiper-bestsellers", carouselBestsellersParams);
 
   if (browserBreakpoint == "md" || browserBreakpoint == "sm" || browserBreakpoint == "xs") {
     bestsellersCarousel.swiperObj.navigation.destroy();

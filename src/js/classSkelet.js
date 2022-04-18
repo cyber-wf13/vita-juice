@@ -28,16 +28,38 @@ export class Skelet {
     return elem;
   }
 
-  // createCarcass(titleText, prefix = "skelet") {
-  //   let section = new Skelet("section", `${prefix}`),
-  //   sectionWrapper = new Skelet("div", `${prefix}__wrapper`),
-  //   sectionTitle = section.createTitle(titleText, `${prefix}__title`);
+  createList(listContent, className, prefix, arrayWrapper = false, customPrefix = false) {
+    let listClassNames = [className, `${prefix}__list`];
 
-  //   return [section, sectionTitle, sectionWrapper];
-  // }
+    if (prefix === false && customPrefix != false){
+      listClassNames[1] = customPrefix;
+    }
+
+    const list = new Skelet("ul", listClassNames);
+
+    if (arrayWrapper == true) {
+      listContent.forEach((item) => {
+        let listItem = new Skelet("li", `${className}__item`);
+        listItem.insertItems(item)
+        list.insertItems(listItem);
+      })
+    } else {
+      let listItem = new Skelet("li", `${className}__item`);
+      listItem.insertItems(listContent)
+      list.insertItems(listItem);
+    }
+
+    return list;
+  }
 
   createTitle(titleText, className = " ") {
-    const title = new Skelet("h2", ["title", className]);
+    let titleClassNames = ["title"];
+    if (Array.isArray(className)){
+      titleClassNames.push(...className);
+    }else{
+      titleClassNames.push(className);
+    }
+    const title = new Skelet("h2", titleClassNames);
     title.setContent(titleText);
 
     return title;
@@ -61,7 +83,7 @@ export class Skelet {
     this.elem.textContent = text;
   }
 
-  setHtml(html){
+  setHtml(html) {
     this.elem.innerHTML = html;
   }
 }

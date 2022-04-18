@@ -7,11 +7,11 @@ export class SkeletSect extends Skelet {
     if (prefix === false || prefix == " " || prefix == "") {
       this.section = new Skelet("section", "skelet");
       this.sectionWrapper = new Skelet("div", "skelet__wrapper");
-      this.sectionTitle = this.createTitle(titleText);
+      this.sectionTitle = this.createTitle(titleText, "skelet__title");
     }else {
       this.section = new Skelet("section", ["skelet", `${prefix}`]);
       this.sectionWrapper = new Skelet("div", ["skelet__wrapper", `${prefix}__wrapper`]);
-      this.sectionTitle = this.createTitle(titleText, `${prefix}__title`);
+      this.sectionTitle = this.createTitle(titleText, ["skelet__title", `${prefix}__title`]);
     }
   }
 

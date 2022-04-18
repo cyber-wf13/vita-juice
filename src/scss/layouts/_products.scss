@@ -1,11 +1,6 @@
 .products {
-  &__title {
-    margin: 35px 0;
-  }
 
   &__wrapper {
-    border-top: 8px dashed $c-font;
-    border-bottom: 8px dashed $c-font;
     min-height: 720px;
     background: url(../img/products/main-bg.png) no-repeat bottom left / auto 100%, #6b9d52;
     padding: 55px 75px 45px 0;

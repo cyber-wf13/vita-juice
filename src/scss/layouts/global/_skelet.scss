@@ -1,0 +1,10 @@
+.skelet{
+  &__title{
+    margin: 35px 0px;
+  }
+
+  &__wrapper{
+    border-top: 8px dashed $c-font;
+    border-bottom: 8px dashed $c-font;
+  }
+}
