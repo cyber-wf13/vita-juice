@@ -1,4 +1,4 @@
-.header{
+.header {
   position: relative;
   display: flex;
   justify-content: flex-end;
@@ -7,29 +7,30 @@
   padding: 15px 0 20px;
   text-transform: uppercase;
 
-  &__wrapper{
+  &__wrapper {
     height: 100%;
     width: 90%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 
-    @media (max-width: (map.get($custom-breakpoints, '<1600') - 0.02)){
+    @media (max-width: (map.get($custom-breakpoints, "<1600") - 0.02)) {
       margin-left: 10px;
     }
   }
 
-  &__wrapper-top{
+  &__wrapper-top {
     display: flex;
     justify-content: flex-end;
   }
 
-  &__wrapper-bottom{
+  &__wrapper-bottom {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 35px;
 
-    @media (max-width: (map.get($custom-breakpoints, '<1600') - 0.02)){
-      flex-direction: column-reverse; 
+    @media (max-width: (map.get($custom-breakpoints, "<1600") - 0.02)) {
+      flex-direction: column-reverse;
     }
   }
 }
