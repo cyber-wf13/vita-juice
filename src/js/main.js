@@ -23,6 +23,7 @@ import { Delivery } from "./components/delivery/classDelivery";
 import { Loyalty } from "./components/loyalty/classLoyalty";
 import { Footer } from "./components/base/classFooter";
 import { Social } from "./components/base/classSocial";
+import { Select } from "./components/select/classSelect";
 
 const carouselHeroParams = {
   loop: true,
@@ -57,6 +58,7 @@ const carouselBestsellersParams = {
 
 const render = () => {
   const header = new Header("header", "header"),
+    headerActions = new Skelet("div", "header__actions"),
     cart = header.createCart(),
     cabinet = header.createCabinet(),
     navProducts = new Skelet("nav", "nav-products"),
@@ -74,12 +76,15 @@ const render = () => {
       "menu-list",
       "menu-list",
       true
-    );
+    ),
+    selectHeader = new Select("div", "select", "Ваш регион");
 
   navProducts.insertItems(navProductList);
   navMenu.insertItems(navMenuList);
 
-  header.topHeaderWrapper.insertItems([cart, cabinet]);
+  headerActions.insertItems([cart, cabinet]);
+
+  header.topHeaderWrapper.insertItems([selectHeader, headerActions]);
   header.bottomHeaderWrapper.insertItems([navProducts, navMenu]);
 
   const headerContainer = header.createCarcass();

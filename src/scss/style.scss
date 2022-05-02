@@ -2,43 +2,44 @@
 @use "sass:map";
 
 //Создание миксинов и переменных
-@import 'helpers/mixins';
-@import 'helpers/vars';
+@import "helpers/mixins";
+@import "helpers/vars";
 
 // Стили для переопределения правил сторонних библоитек
 // @import 'vendors/bootstrap';
 
 // Объявление стилей для всего проекта
-@import 'base/global';
-@import 'base/reset';
-@import 'base/fonts';
+@import "base/global";
+@import "base/reset";
+@import "base/fonts";
 
 // Стили для глобальных компонентов БЭМ
-@import 'components/global/title';
-@import 'layouts/global/skelet';
+@import "components/global/title";
+@import "layouts/global/skelet";
 
 // Стили для компонентов
-@import 'components/navProducts';
-@import 'components/navMenu';
-@import 'components/logo';
-@import 'components/cart';
-@import 'components/cabinet';
-@import 'components/productCard';
-@import 'components/bestCard';
-@import 'components/deliveryZone';
-@import 'components/deliveryCard';
-@import 'components/loyaltyList';
-@import 'components/loyaltyCard';
-@import 'components/listInfo';
-@import 'components/listLinks';
-@import 'components/social';
+@import "components/select";
+@import "components/navProducts";
+@import "components/navMenu";
+@import "components/logo";
+@import "components/cart";
+@import "components/cabinet";
+@import "components/productCard";
+@import "components/bestCard";
+@import "components/deliveryZone";
+@import "components/deliveryCard";
+@import "components/loyaltyList";
+@import "components/loyaltyCard";
+@import "components/listInfo";
+@import "components/listLinks";
+@import "components/social";
+@import "components/modal";
 
 // Стили для шаблонов страниц
-@import 'layouts/header';
-@import 'layouts/footer';
-@import 'layouts/hero';
-@import 'layouts/products';
-@import 'layouts/bestsellers';
-@import 'layouts/delivery';
-@import 'layouts/loyalty';
-
+@import "layouts/header";
+@import "layouts/footer";
+@import "layouts/hero";
+@import "layouts/products";
+@import "layouts/bestsellers";
+@import "layouts/delivery";
+@import "layouts/loyalty";

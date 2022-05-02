@@ -1,13 +1,13 @@
-.cart{
+.cart {
   position: relative;
   display: flex;
   align-items: center;
-  padding: 10px 55px 15px 0;
+  padding: 10px 0 15px;
   margin-right: 85px;
   transition: color 0.3s ease-out;
   cursor: pointer;
 
-  span{
+  span {
     display: inline-block;
     margin-left: 10px;
 
@@ -16,18 +16,15 @@
     }
   }
 
-  @media (any-hover:hover){
-    &:hover{
+  @media (any-hover: hover) {
+    &:hover {
       color: $c-hover;
 
-      span > svg > path{
+      span > svg > path {
         fill: $c-hover;
       }
     }
-
-    
   }
-
 
   // &::after{
   //   content: "";

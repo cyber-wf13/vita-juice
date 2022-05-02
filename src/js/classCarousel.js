@@ -1,8 +1,10 @@
 import { Skelet } from "./classSkelet";
-import Swiper, { Navigation } from 'swiper';
+import Swiper, { Navigation } from "swiper";
 
+/* 
+Класс Carousel служит для создание базовой структуры swiper на основе класса Skelet
+*/
 export class Carousel {
-
   constructor(swiperParams, className) {
     this.swiperParams = swiperParams;
     this.className = ["swiper"];
@@ -15,16 +17,18 @@ export class Carousel {
     this.carouselWrapperSkelet = new Skelet("div", "swiper-wrapper");
     this.createCarcass();
   }
-  
+
+  // Метод, который вызывается после создания структуры. Выполняет инициализацию swiper.
   init() {
     this.swiperObj = new Swiper(`.${this.className[1]}`, this.swiperParams);
     this.swiperObj.init(this.carouselSkelet);
   }
 
+  // Данный метод создает базовый каркасс для swiper на основе переданных модулей в объекте-параметров
   createCarcass() {
     this.carouselSkelet.insertItems(this.carouselWrapperSkelet);
 
-    if (this.swiperParams.hasOwnProperty('modules')) {
+    if (this.swiperParams.hasOwnProperty("modules")) {
       this.swiperParams.modules.forEach((moduleFunc) => {
         let moduleName = moduleFunc.name;
 
@@ -54,6 +58,5 @@ export class Carousel {
       swiperSlide.insertItems(item);
       this.carouselWrapperSkelet.insertItems(swiperSlide);
     });
-
   }
 }

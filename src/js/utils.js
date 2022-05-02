@@ -1,3 +1,6 @@
 export const body = document.body,
-  browserBreakpoint = window.getComputedStyle(body, ":after").getPropertyValue("content").replaceAll(/"/g, "");
-
+  // Переменная позволяет определить ширину области просмотра с помощью css свойства after элемента body
+  browserBreakpoint = window
+    .getComputedStyle(body, ":after")
+    .getPropertyValue("content")
+    .replaceAll(/"/g, "");

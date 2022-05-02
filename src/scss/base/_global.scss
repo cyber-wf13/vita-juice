@@ -6,10 +6,16 @@ body {
 	justify-content: space-between;
 	font-family: $base-font;
 	font-weight: $base-font-weight;
-	font-size: $base-font-size;
 	color: $base-font-color;
 }
 
+body {
+	font-size: $base-font-size;
+
+	&._modal-open {
+		overflow: hidden;
+	}
+}
 
 @each $size, $value in $breakpoints {
 	@media (min-width: map.get($breakpoints, $size)) {

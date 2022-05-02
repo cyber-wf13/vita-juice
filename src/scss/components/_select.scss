@@ -1,0 +1,38 @@
+.select {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+
+  svg {
+    transition: all 0.3s ease-out;
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      color: $c-hover;
+
+      .select-mark-svg {
+        fill: $c-hover;
+      }
+
+      .select-arrow-btn {
+        fill: $c-hover;
+      }
+    }
+  }
+
+  &__title {
+    margin: 0 15px 0 8px;
+  }
+
+  &__button {
+    border: none;
+    background-color: transparent;
+    transform: rotate(-90deg);
+    height: 16px;
+    width: 16px;
+    cursor: pointer;
+  }
+}
