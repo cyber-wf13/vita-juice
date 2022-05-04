@@ -1,5 +1,6 @@
 import { Skelet } from "../../classSkelet";
 import { Modal } from "../modal/classModal";
+import { selectModalCities } from "../../infoOfServer";
 
 export class Select extends Skelet {
   constructor(selector, className, titleText) {
@@ -8,7 +9,7 @@ export class Select extends Skelet {
     this.title = new Skelet("span", `${this.className}__title`);
     this.title.setContent(titleText);
 
-    this.modal = new Modal("div", "modal", "Ваш регион");
+    this.modal = null;
     this.init();
   }
 
@@ -26,11 +27,74 @@ export class Select extends Skelet {
 
     this.insertItems([mark, this.title, button]);
 
-    this.elem.addEventListener("click", this.handleClickSelect.bind(this));
+    this.elem.addEventListener("click", this.createModalWindow.bind(this));
   }
 
-  handleClickSelect() {
-    this.modal.createCarcass(new Skelet("div", "test"));
+  createModalWindow() {
+    const modalContent = this.createModalContent();
+
+    this.modal = new Modal("div", "modal", "Ваш регион");
+    this.modal.createCarcass(modalContent);
     this.modal.addModalToBody();
+  }
+
+  createModalContent() {
+    const listOfCities = this.dropList(selectModalCities, 4);
+
+    const region = new Skelet("div", "region"),
+      regionHead = new Skelet("div", "region__head"),
+      regionHeadTitle = new Skelet("h4", "region__title"),
+      regionHeadButton = new Skelet("button", "region__button"),
+      regionBody = new Skelet("div", "region__body"),
+      regionBodyTitle = new Skelet("h4", "region__title"),
+      regionLists = this.setRegionList(listOfCities);
+
+    regionHeadTitle.setContent("Ваш город Красноярск?");
+    regionBodyTitle.setContent("Выбрать из списка");
+    regionHeadButton.setContent("Да");
+
+    regionHead.insertItems([regionHeadTitle, regionHeadButton]);
+    regionBody.insertItems([regionBodyTitle, regionLists]);
+    region.insertItems([regionHead, regionBody]);
+
+    regionHeadButton.elem.addEventListener(
+      "click",
+      function () {
+        if (this.modal != null || this.modal != undefined) {
+          this.modal.removeModalFromBody();
+        }
+      }.bind(this)
+    );
+
+    return region;
+  }
+
+  dropList(list, dropCount) {
+    const listLength = list.length;
+    let formatedList = [];
+
+    for (let i = 0; i <= listLength; i += dropCount) {
+      if (i == listLength) {
+        break;
+      }
+      formatedList.push(list.sort().slice(i, i + dropCount));
+    }
+
+    return formatedList;
+  }
+
+  setRegionList(listOfCities) {
+    const blockLists = new Skelet("div", "region__lists");
+    listOfCities.forEach((listCities) => {
+      let list = blockLists.createList(
+        listCities,
+        "region-list",
+        "region",
+        true
+      );
+      blockLists.insertItems(list);
+    });
+
+    return blockLists;
   }
 }

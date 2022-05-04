@@ -23,16 +23,19 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap; /* ВРЕМЕННОЕ ПРАВИЛО */
   }
 
   &__actions {
     display: flex;
+    flex-wrap: wrap; /* ВРЕМЕННОЕ ПРАВИЛО */
   }
 
   &__wrapper-bottom {
     display: flex;
     justify-content: space-between;
     margin-bottom: 35px;
+    display: none; /* ВРЕМЕННОЕ ПРАВИЛО */
 
     @media (max-width: (map.get($custom-breakpoints, "<1600") - 0.02)) {
       flex-direction: column-reverse;

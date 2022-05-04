@@ -6,7 +6,7 @@
   bottom: 0;
   background-color: rgba(#c4c4c4, 0.75);
   z-index: 20;
-  overflow: hidden;
+  overflow-y: auto;
 }
 
 .modal {
@@ -18,7 +18,14 @@
   flex-direction: column;
   border-radius: 50px;
   background-color: #fff;
-  @include adaptiv-value("min-width", 650, 320, 1);
+  min-width: 650px;
+
+  @media (max-width: (map.get($breakpoints, "md") - 0.02)) {
+    top: 0;
+    transform: translate(-50%, 0);
+    min-width: 100%;
+    border-radius: 0;
+  }
 
   &__head {
     background-color: $c-hover;
@@ -28,12 +35,21 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media (max-width: (map.get($breakpoints, "md") - 0.02)) {
+      padding: 25px 30px;
+      border-radius: 0;
+    }
   }
 
   &__title {
     font-size: 25px;
     font-weight: 400;
     text-transform: uppercase;
+
+    @media (max-width: (map.get($breakpoints, "sm") - 0.02)) {
+      font-size: 20px;
+    }
   }
 
   &__button {
@@ -47,5 +63,9 @@
 
   &__body {
     padding: 35px 50px;
+
+    @media (max-width: (map.get($breakpoints, "md") - 0.02)) {
+      padding: 25px;
+    }
   }
 }

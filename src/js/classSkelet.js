@@ -64,7 +64,11 @@ export class Skelet {
     if (arrayWrapper == true) {
       listContent.forEach((item) => {
         let listItem = new Skelet("li", `${className}__item`);
-        listItem.insertItems(item);
+        if (typeof item == "string") {
+          listItem.setContent(item);
+        } else {
+          listItem.insertItems(item);
+        }
         list.insertItems(listItem);
       });
     } else {

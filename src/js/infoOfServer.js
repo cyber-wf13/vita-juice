@@ -60,6 +60,23 @@ export const navMenuInfo = [
   },
 ];
 
+export const selectModalCities = [
+  "Волгоград",
+  "Воронеж",
+  "Москва",
+  "Екатеринбург",
+  "Красноярск",
+  "Пенза",
+  "Новосибирск",
+  "Уфа",
+  "Самара",
+  "Нижний Новгород",
+  "Санкт-Петербург",
+  "Казань",
+  "Киев",
+  "Львов",
+];
+
 export const heroImgPaths = [
   "img/hero/slider-1.png",
   "img/hero/slider-1.png",

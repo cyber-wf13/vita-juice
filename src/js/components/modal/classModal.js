@@ -16,6 +16,11 @@ export class Modal extends Skelet {
       closeBtn = new Skelet("button", `${this.className}__button`),
       bodyBlock = new Skelet("div", `${this.className}__body`);
 
+    head.insertItems([this.title, closeBtn]);
+    bodyBlock.insertItems(blockContent);
+    this.insertItems([head, bodyBlock]);
+    this.wrapper.insertItems(this);
+
     closeBtn.elem.addEventListener(
       "click",
       this.removeModalFromBody.bind(this)
@@ -25,11 +30,6 @@ export class Modal extends Skelet {
       "click",
       this.handleWrapperClick.bind(this)
     );
-
-    head.insertItems([this.title, closeBtn]);
-    bodyBlock.insertItems(blockContent);
-    this.insertItems([head, bodyBlock]);
-    this.wrapper.insertItems(this);
   }
 
   addModalToBody() {
