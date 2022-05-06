@@ -3,13 +3,27 @@
   display: flex;
   align-items: center;
   padding: 10px 0 15px;
-  margin-right: 85px;
   transition: color 0.3s ease-out;
   cursor: pointer;
+
+  @media (max-width: (map.get($breakpoints, "md") - 0.02)) {
+    font-size: 0;
+  }
 
   span {
     display: inline-block;
     margin-left: 10px;
+
+    @media (max-width: (map.get($breakpoints, "md") - 0.02)) {
+      margin-left: 0;
+    }
+
+    svg {
+      @media (max-width: (map.get($breakpoints, "sm") - 0.02)) {
+        width: 40px;
+        height: 30px;
+      }
+    }
 
     svg > path {
       transition: fill 0.3s ease-out;

@@ -5,16 +5,26 @@ export class Modal extends Skelet {
   constructor(selector, className, titleText) {
     super(selector, className);
 
-    this.title = new Skelet("h4", `${className}__title`);
-    this.title.setContent(titleText);
+    if (Array.isArray(className)) {
+      this.prefix = this.className[0];
+    } else {
+      this.prefix = this.className;
+    }
 
-    this.wrapper = new Skelet("div", `${this.className}-wrapper`);
+    if (typeof titleText == "object") {
+      this.title = titleText;
+    } else {
+      this.title = new Skelet("h4", `${this.prefix}__title`);
+      this.title.setContent(titleText);
+    }
+
+    this.wrapper = new Skelet("div", `${this.prefix}-wrapper`);
   }
 
   createCarcass(blockContent) {
-    const head = new Skelet("div", `${this.className}__head`),
-      closeBtn = new Skelet("button", `${this.className}__button`),
-      bodyBlock = new Skelet("div", `${this.className}__body`);
+    const head = new Skelet("div", `${this.prefix}__head`),
+      closeBtn = new Skelet("button", `${this.prefix}__button`),
+      bodyBlock = new Skelet("div", `${this.prefix}__body`);
 
     head.insertItems([this.title, closeBtn]);
     bodyBlock.insertItems(blockContent);

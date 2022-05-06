@@ -69,24 +69,58 @@ const render = () => {
       "menu-products",
       true
     ),
-    navMenu = new Skelet("nav", "nav-menu"),
-    navMenuContent = header.createNavListContent(navMenuInfo),
-    navMenuList = header.createList(
+    navMenu = new Skelet("nav", "nav-menu");
+
+  let navMenuContent = header.createNavListContent(navMenuInfo);
+
+  if (
+    browserBreakpoint == "md" ||
+    browserBreakpoint == "sm" ||
+    browserBreakpoint == "xs"
+  ) {
+    const menuLink = header.createMobileButton("menu-btn", navProducts, "меню");
+    menuLink.setContent("меню");
+
+    navMenuContent = [menuLink, ...navMenuContent];
+  }
+
+  const navMenuList = header.createList(
       navMenuContent,
       "menu-list",
       "menu-list",
       true
     ),
-    selectHeader = new Select("div", "select", "Ваш регион");
+    selectHeader = new Select("div", "select", "header", "Ваш регион");
 
   navProducts.insertItems(navProductList);
   navMenu.insertItems(navMenuList);
 
-  headerActions.insertItems([cart, cabinet]);
+  if (
+    browserBreakpoint == "md" ||
+    browserBreakpoint == "sm" ||
+    browserBreakpoint == "xs"
+  ) {
+    const menuButton = header.createMobileButton(
+        "menu-btn",
+        navProducts,
+        "меню"
+      ),
+      burger = header.createMobileButton("burger", navMenu, header.logo);
 
-  header.topHeaderWrapper.insertItems([selectHeader, headerActions]);
-  header.bottomHeaderWrapper.insertItems([navProducts, navMenu]);
+    menuButton.setContent("меню");
 
+    header.topHeaderWrapper.insertItems([
+      burger,
+      menuButton,
+      selectHeader,
+      cart,
+      cabinet,
+    ]);
+  } else {
+    headerActions.insertItems([cart, cabinet]);
+    header.topHeaderWrapper.insertItems([selectHeader, headerActions]);
+    header.bottomHeaderWrapper.insertItems([navProducts, navMenu]);
+  }
   const headerContainer = header.createCarcass();
 
   const hero = new Hero("div", "hero");

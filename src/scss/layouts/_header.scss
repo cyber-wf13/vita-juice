@@ -7,6 +7,10 @@
   padding: 15px 0 20px;
   text-transform: uppercase;
 
+  @media (max-width: (map.get($breakpoints, "md") - 0.02)) {
+    padding: 15px 0;
+  }
+
   &__wrapper {
     height: 100%;
     width: 90%;
@@ -17,28 +21,58 @@
     @media (max-width: (map.get($custom-breakpoints, "<1600") - 0.02)) {
       margin-left: 10px;
     }
+
+    @media (max-width: (map.get($breakpoints, "lg") - 0.02)) {
+      width: 100%;
+      margin-left: 0;
+    }
   }
 
   &__wrapper-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; /* ВРЕМЕННОЕ ПРАВИЛО */
+    flex-wrap: wrap;
+  }
+
+  &__logo {
+    @media (max-width: (map.get($breakpoints, "lg") - 0.02)) {
+      height: 45px;
+      width: 45px;
+    }
+  }
+
+  &__select {
+    @media (max-width: (map.get($breakpoints, "md") - 0.02)) {
+      padding: 0 10px;
+    }
   }
 
   &__actions {
     display: flex;
-    flex-wrap: wrap; /* ВРЕМЕННОЕ ПРАВИЛО */
+    flex-wrap: wrap;
+  }
+
+  &__cart {
+    @include adaptiv-value("margin-right", 85, 30, 1);
+
+    @media (max-width: (map.get($breakpoints, "lg") - 0.02)) {
+      padding: 0 10px;
+      margin: 0;
+    }
   }
 
   &__wrapper-bottom {
     display: flex;
     justify-content: space-between;
     margin-bottom: 35px;
-    display: none; /* ВРЕМЕННОЕ ПРАВИЛО */
 
     @media (max-width: (map.get($custom-breakpoints, "<1600") - 0.02)) {
       flex-direction: column-reverse;
+    }
+
+    @media (max-width: (map.get($breakpoints, "lg") - 0.02)) {
+      display: none;
     }
   }
 }

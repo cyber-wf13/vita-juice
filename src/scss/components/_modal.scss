@@ -20,6 +20,22 @@
   background-color: #fff;
   min-width: 650px;
 
+  &--fixed {
+    top: 0;
+    bottom: 0;
+    transform: translate(-50%, 0);
+    min-width: 100%;
+    border-radius: 0;
+
+    .modal__head {
+      border-radius: 0;
+    }
+
+    .modal__body {
+      height: 100%;
+    }
+  }
+
   @media (max-width: (map.get($breakpoints, "md") - 0.02)) {
     top: 0;
     transform: translate(-50%, 0);
@@ -39,6 +55,10 @@
     @media (max-width: (map.get($breakpoints, "md") - 0.02)) {
       padding: 25px 30px;
       border-radius: 0;
+    }
+
+    @media (max-width: (map.get($breakpoints, "sm") - 0.02)) {
+      padding: 15px 30px;
     }
   }
 

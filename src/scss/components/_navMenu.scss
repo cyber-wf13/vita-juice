@@ -1,26 +1,36 @@
-.nav-menu{
-  ul{ 
+.nav-menu {
+  ul {
     display: flex;
     list-style: none;
     padding: 0;
 
-    @media (max-width: (map.get($custom-breakpoints, '<1600') - 0.02)){
+    @media (max-width: (map.get($custom-breakpoints, "<1600") - 0.02)) {
       margin-bottom: 10px;
+    }
+
+    @media (max-width: (map.get($breakpoints, "lg") - 0.02)) {
+      flex-direction: column;
+      margin: 0;
     }
   }
 
   ul > li {
     transition: color 0.3s ease-out;
-    @media (any-hover:hover){
-      &:hover{
+    text-transform: uppercase;
+    @media (any-hover: hover) {
+      &:hover {
         color: $c-hover;
       }
     }
-    &:not(&:last-child){
+    &:not(&:last-child) {
       margin-right: 55px;
 
-      @media (max-width: (map.get($breakpoints, 'xl') - 0.02)){
+      @media (max-width: (map.get($breakpoints, "xl") - 0.02)) {
         margin-right: 20px;
+      }
+
+      @media (max-width: (map.get($breakpoints, "lg") - 0.02)) {
+        margin: 0 0 15px 0;
       }
     }
   }

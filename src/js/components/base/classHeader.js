@@ -1,4 +1,6 @@
 import { Skelet } from "../../classSkelet";
+import { Modal } from "../modal/classModal";
+import { browserBreakpoint } from "../../utils";
 
 export class Header extends Skelet {
   constructor(selector, className) {
@@ -6,6 +8,10 @@ export class Header extends Skelet {
 
     this.topHeaderWrapper = new Skelet("div", "header__wrapper-top");
     this.bottomHeaderWrapper = new Skelet("div", "header__wrapper-bottom");
+
+    this.modal = null;
+    this.logo = new Skelet("img", ["logo", `${this.className}__logo`]);
+    this.logo.setAttr("src", "img/header/logo.svg");
   }
 
   createCarcass() {
@@ -13,23 +19,29 @@ export class Header extends Skelet {
         "container",
         "container__header",
       ]),
-      logo = new Skelet("img", "logo"),
       headerWrapper = new Skelet("div", "header__wrapper");
 
-    logo.setAttr("src", "img/header/logo.svg");
-
-    headerWrapper.insertItems([
-      this.topHeaderWrapper,
-      this.bottomHeaderWrapper,
-    ]);
-    this.insertItems([logo, headerWrapper]);
+    if (
+      browserBreakpoint == "md" ||
+      browserBreakpoint == "sm" ||
+      browserBreakpoint == "xs"
+    ) {
+      this.insertItems(headerWrapper);
+      headerWrapper.insertItems(this.topHeaderWrapper);
+    } else {
+      this.insertItems([this.logo, headerWrapper]);
+      headerWrapper.insertItems([
+        this.topHeaderWrapper,
+        this.bottomHeaderWrapper,
+      ]);
+    }
     headerContainer.insertItems(this);
 
     return headerContainer;
   }
 
   createCart() {
-    const cart = new Skelet("a", "cart"),
+    const cart = new Skelet("a", ["cart", `${this.className}__cart`]),
       cartCount = new Skelet("span", "cart-count"),
       cartImg = new Skelet("span");
 
@@ -44,7 +56,7 @@ export class Header extends Skelet {
   }
 
   createCabinet() {
-    const cabinet = new Skelet("a", "cabinet"),
+    const cabinet = new Skelet("a", ["cabinet", `${this.className}__cabinet`]),
       cabinetImg = new Skelet("span");
 
     cabinetImg.setHtml(`<svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -76,5 +88,24 @@ export class Header extends Skelet {
     });
 
     return navLinks;
+  }
+
+  createMobileButton(className, content, title) {
+    const button = new Skelet("a", [className, `header__${className}`]);
+
+    button.elem.addEventListener(
+      "click",
+      function () {
+        this.createModal(content, title);
+      }.bind(this)
+    );
+
+    return button;
+  }
+
+  createModal(content, title) {
+    this.modal = new Modal("div", ["modal", "modal--fixed"], title);
+    this.modal.createCarcass(content);
+    this.modal.addModalToBody();
   }
 }

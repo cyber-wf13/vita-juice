@@ -3,10 +3,10 @@ import { Modal } from "../modal/classModal";
 import { selectModalCities } from "../../infoOfServer";
 
 export class Select extends Skelet {
-  constructor(selector, className, titleText) {
-    super(selector, className);
+  constructor(selector, className, prefix, titleText) {
+    super(selector, [className, `${prefix}__${className}`]);
 
-    this.title = new Skelet("span", `${this.className}__title`);
+    this.title = new Skelet("span", `${this.className[0]}__title`);
     this.title.setContent(titleText);
 
     this.modal = null;
@@ -14,8 +14,8 @@ export class Select extends Skelet {
   }
 
   init() {
-    const mark = new Skelet("span", `${this.className}__mark`),
-      button = new Skelet("button", `${this.className}__button`);
+    const mark = new Skelet("span", `${this.className[0]}__mark`),
+      button = new Skelet("button", `${this.className[0]}__button`);
 
     mark.setHtml(`<svg class="select-mark-svg" width="27" height="36" viewBox="0 0 27 36" fill="#2B2A29" xmlns="http://www.w3.org/2000/svg">
     <path d="M13.5 36C13.7893 36 14.0786 35.8579 14.2232 35.6684C14.7536 35.0526 27 20.3211 27 13.2632C27 5.96842 20.925 0 13.5 0C6.075 0 0 5.96842 0 13.2632C0 20.3211 12.2464 35.0526 12.7768 35.6684C12.9214 35.8579 13.2107 36 13.5 36ZM13.5 1.89474C19.8643 1.89474 25.0714 7.01053 25.0714 13.2632C25.0714 18.7105 16.1518 30.2211 13.5 33.5368C9.69107 28.8 1.92857 18.1895 1.92857 13.2632C1.92857 7.01053 7.13571 1.89474 13.5 1.89474Z"/>
