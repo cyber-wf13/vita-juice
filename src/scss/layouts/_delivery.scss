@@ -1,28 +1,28 @@
-.delivery{
-
-  &__block{
-    &:not(&:last-child){
+.delivery {
+  &__block {
+    &:not(&:last-child) {
       margin-bottom: 40px;
     }
 
-    @media (max-width: (map.get($breakpoints, 'lg') - 0.02)){
+    @media (max-width: (map.get($breakpoints, "lg") - 0.02)) {
       display: flex;
       flex-direction: column;
       justify-content: center;
     }
   }
 
-  &__wrapper{
-    background: url(../img/delivery/delivery-bg.png) no-repeat bottom right / auto, linear-gradient(291.53deg, #FECF3D 3.56%, #6B9D52 69.58%);
+  &__wrapper {
+    background: url(../img/delivery/delivery-bg.png) no-repeat bottom right / auto,
+      linear-gradient(291.53deg, #fecf3d 3.56%, #6b9d52 69.58%);
     padding: 45px 75px;
 
-    @media (max-width: (map.get($breakpoints, 'xl') - 0.02)){
-      background-image: linear-gradient(291.53deg, #FECF3D 3.56%, #6B9D52 69.58%);
+    @media (max-width: (map.get($breakpoints, "xl") - 0.02)) {
+      background-image: linear-gradient(291.53deg, #fecf3d 3.56%, #6b9d52 69.58%);
       padding: 45px 15px;
     }
   }
 
-  &__block-title{
+  &__block-title {
     @include adaptiv-value(font-size, 40, 30, 1);
     font-weight: 400;
     color: #fff;
@@ -30,59 +30,69 @@
     text-transform: uppercase;
     margin-bottom: 25px;
 
-    @media (max-width: (map.get($breakpoints, 'lg') - 0.02)){
+    @media (max-width: (map.get($breakpoints, "lg") - 0.02)) {
       text-align: center;
     }
   }
 
-  &__block-content{
+  &__block-content {
     display: flex;
     justify-content: flex-start;
 
-    @media (max-width: (map.get($breakpoints, 'lg') - 0.02)){
+    @media (max-width: (map.get($breakpoints, "lg") - 0.02)) {
       justify-content: space-between;
     }
 
-    @media (max-width: (map.get($breakpoints, 'md') - 0.02)){
+    @media (max-width: (map.get($breakpoints, "md") - 0.02)) {
       flex-direction: column;
-
     }
   }
 
-  &__block-map{
+  &__block-map {
     border-radius: 60px;
     margin-top: 25px;
+    max-height: 400px;
+    height: 100%;
+
+    @media (max-width: (map.get($breakpoints, "lg") - 0.02)) {
+      width: 550px;
+      margin: 25px auto 0;
+    }
+
+    @media (max-width: (map.get($breakpoints, "sm") - 0.02)) {
+      width: 100%;
+    }
   }
 
-  &__zone{
-    @media (max-width: (map.get($breakpoints, 'lg') - 0.02)){
+  &__zone {
+    @media (max-width: (map.get($breakpoints, "lg") - 0.02)) {
       margin: 0 10px;
     }
-    &:not(&:first-child){
+    &:not(&:first-child) {
       margin: 0 0 0 150px;
-      @media (max-width: (map.get($breakpoints, 'lg') - 0.02)){
+      @media (max-width: (map.get($breakpoints, "lg") - 0.02)) {
         margin: 0 10px;
       }
 
-      @media (max-width: (map.get($breakpoints, 'md') - 0.02)){
+      @media (max-width: (map.get($breakpoints, "md") - 0.02)) {
         margin: 25px 10px 0;
       }
     }
   }
 
-  &__card{
-    @media (max-width: (map.get($breakpoints, 'lg') - 0.02)){
+  &__card {
+    @media (max-width: (map.get($breakpoints, "lg") - 0.02)) {
       margin: 0 10px;
     }
 
-    &:not(&:first-child){
+    &:not(&:first-child) {
       margin-left: 120px;
 
-      @media (max-width: (map.get($breakpoints, 'lg') - 0.02)){
+      @media (max-width: (map.get($breakpoints, "lg") - 0.02)) {
         margin: 0 10px;
       }
 
-      @media (max-width: (map.get($breakpoints, 'md') - 0.02)){
+      @media (max-width: (map.get($breakpoints, "md") - 0.02)) {
         margin: 25px 10px 0;
       }
     }

@@ -160,7 +160,7 @@ const render = () => {
     );
 
   const deliveryBlockZonesMap = new Skelet("img", "delivery__block-map");
-  deliveryBlockZonesMap.setAttr("src", "img/delivery/map.jpg");
+  deliveryBlockZonesMap.setAttr("src", "img/delivery/map.png");
   deliveryBlockZones.insertItems(deliveryBlockZonesMap);
 
   delivery.sectionWrapper.insertItems([
