@@ -41,8 +41,8 @@ const carouselHeroParams = {
 const carouselBestsellersParams = {
   loop: true,
   modules: [Navigation],
-  slidesPerView: 1,
   spaceBetween: 0,
+  simulateTouch: false,
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
@@ -53,7 +53,9 @@ const carouselBestsellersParams = {
     },
     992: {
       slidesPerView: 2,
-      simulateTouch: false,
+    },
+    320: {
+      slidesPerView: 1,
     },
   },
 };
@@ -126,7 +128,10 @@ const render = () => {
   const headerContainer = header.createCarcass();
 
   const hero = new Hero("div", "hero");
-  const heroCarousel = new Carousel(carouselHeroParams, "swiper-hero");
+  const heroCarousel = new Carousel(carouselHeroParams, "swiper-hero", {
+    navigation: true,
+    pagination: true,
+  });
   heroCarousel.createSlide(hero.createSliderImg(heroImgPaths));
   hero.insertItems(heroCarousel.carouselSkelet);
 
@@ -138,7 +143,10 @@ const render = () => {
   const bestsellers = new Bestsellers("хиты продаж", "bestsellers");
   const bestsellersCarousel = new Carousel(
     carouselBestsellersParams,
-    "swiper-bestsellers"
+    "swiper-bestsellers",
+    {
+      pagination: true,
+    }
   );
   bestsellers.sectionWrapper.insertItems(bestsellersCarousel.carouselSkelet);
   bestsellersCarousel.createSlide(

@@ -5,9 +5,10 @@ import Swiper, { Navigation } from "swiper";
 Класс Carousel служит для создание базовой структуры swiper на основе класса Skelet
 */
 export class Carousel {
-  constructor(swiperParams, className) {
+  constructor(swiperParams, className, modules) {
     this.swiperParams = swiperParams;
     this.className = ["swiper"];
+    this.modules = modules;
 
     if (className) {
       this.className.push(className);
@@ -28,9 +29,20 @@ export class Carousel {
   createCarcass() {
     this.carouselSkelet.insertItems(this.carouselWrapperSkelet);
 
+    if (this.modules.navigation == true) {
+      const swiperPagination = new Skelet("div", "swiper-pagination");
+      this.carouselSkelet.insertItems(swiperPagination);
+    }
+
+    if (this.modules.pagination == true) {
+      const swiperPrevBtn = new Skelet("div", "swiper-button-prev"),
+        swiperNextBtn = new Skelet("div", "swiper-button-next");
+      this.carouselSkelet.insertItems([swiperPrevBtn, swiperNextBtn]);
+    }
+    /* 
     if (this.swiperParams.hasOwnProperty("modules")) {
       this.swiperParams.modules.forEach((moduleFunc) => {
-        let moduleName = moduleFunc.name;
+        let moduleName = moduleFunc;
 
         switch (moduleName) {
           case "Pagination":
@@ -49,6 +61,7 @@ export class Carousel {
         }
       });
     }
+     */
   }
 
   createSlide(innerItems) {
