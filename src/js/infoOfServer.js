@@ -10,24 +10,24 @@ export const navProductsInfo = [
     color: "FECF3D",
   },
   {
-    text: "смузи",
+    text: "фреши",
     link: "#",
     color: "F08AA8",
   },
   {
-    text: "ласси",
+    text: "смузи",
     link: "#",
     color: "E5097F",
   },
   {
-    text: "детокс",
+    text: "чай",
     link: "#",
     color: "EF7F1A",
   },
   {
-    text: "боулы",
+    text: "кофе",
     link: "#",
-    color: "AE4A84",
+    color: "7BB933",
   },
   {
     text: "салаты",
@@ -35,9 +35,9 @@ export const navProductsInfo = [
     color: "009846",
   },
   {
-    text: "здоровая еда",
+    text: "ЗДОРОВАЯ ЕДА",
     link: "#",
-    color: "7BB933",
+    color: "AE4A84",
   },
 ];
 
@@ -61,20 +61,31 @@ export const navMenuInfo = [
 ];
 
 export const selectModalCities = [
-  "Волгоград",
-  "Воронеж",
-  "Москва",
-  "Екатеринбург",
-  "Красноярск",
-  "Пенза",
-  "Новосибирск",
-  "Уфа",
-  "Самара",
-  "Нижний Новгород",
-  "Санкт-Петербург",
-  "Казань",
-  "Киев",
+  "Винница",
+  "Кропивницкий",
+  "Полтава",
+  "Харьков",
+  "Днепр",
+  "Луганск",
+  "Ровно",
+  "Херсон",
+  "Донецк",
+  "Луцк",
+  "Симферополь",
+  "Хмельницкий",
+  "Житомир",
   "Львов",
+  "Сумы",
+  "Черкассы",
+  "Запорожье",
+  "Николаев",
+  "Тернополь",
+  "Чернигов",
+  "Ивано-Франковск",
+  "Одесса",
+  "Ужгород",
+  "Черновцы",
+  "Киев",
 ];
 
 export const heroImgPaths = [
@@ -86,37 +97,37 @@ export const productCardInfo = {
   соки: "img/products/cards/juice.png",
   миксы: "img/products/cards/mix.png",
   смузи: "img/products/cards/smoothies.png",
-  ласси: "img/products/cards/lassy.png",
-  детокс: "img/products/cards/detox.png",
-  боулы: "img/products/cards/bouly.png",
+  фреши: "img/products/cards/lassy.png",
+  чай: "img/products/cards/detox.png",
+  кофе: "img/products/cards/bouly.png",
   салаты: "img/products/cards/salads.png",
   "здоровая еда": "img/products/cards/eat.png",
 };
 
 export const bestsellersCardInfo = [
   {
-    title: "ласси",
-    ml: "500",
-    price: "375",
-    imgPath: "img/bestsellers/lassy.png",
+    title: "Сок Naturaz",
+    ml: "1000",
+    price: "114",
+    imgPath: "img/bestsellers/juice.jpg",
   },
   {
-    title: "микс",
-    ml: "350",
-    price: "450",
-    imgPath: "img/bestsellers/mix.png",
+    title: "фреш апельсиновый",
+    ml: "300",
+    price: "250",
+    imgPath: "img/bestsellers/juice-fresh-apel.jpg",
   },
   {
-    title: "боул",
-    ml: "350",
-    price: "300",
-    imgPath: "img/bestsellers/boul.png",
+    title: "фреш яблочный",
+    ml: "300",
+    price: "250",
+    imgPath: "img/bestsellers/juice-fresh.jpg",
   },
   {
-    title: "ласси",
-    ml: "500",
-    price: "375",
-    imgPath: "img/bestsellers/lassy.png",
+    title: "сок yan",
+    ml: "930",
+    price: "123",
+    imgPath: "img/bestsellers/juice-2.jpg",
   },
 ];
 
@@ -124,15 +135,15 @@ export const deliveryBlockInfo = {
   deliveryZone: [
     {
       color: "#FECF3D",
-      text: "Минимальная сумма заказа 500 руб.",
+      text: "Минимальная сумма заказа 200 грн.",
     },
     {
       color: "#F29114",
-      text: "Минимальная сумма заказа 750 руб.",
+      text: "Минимальная сумма заказа 400 грн.",
     },
     {
       color: "#F08AA8",
-      text: "Минимальная сумма заказа 1000 руб.",
+      text: "Минимальная сумма заказа 800 грн.",
     },
   ],
   deliveryPayment: [
@@ -184,7 +195,7 @@ export const loyaltyListInfo = [
 export const footerInfo = {
   infoText: [
     "Все права пренадлежат ООО «Компания Вита Джус",
-    "ИНН 12456789/ОГРН123456789833",
+    "ИНН 12345678/ОГРН1234567898012",
   ],
   infoLink: [
     {

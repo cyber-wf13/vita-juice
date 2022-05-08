@@ -49,7 +49,7 @@ export class Select extends Skelet {
       regionBodyTitle = new Skelet("h4", "region__title"),
       regionLists = this.setRegionList(listOfCities);
 
-    regionHeadTitle.setContent("Ваш город Красноярск?");
+    regionHeadTitle.setContent("Ваш город Киев?");
     regionBodyTitle.setContent("Выбрать из списка");
     regionHeadButton.setContent("Да");
 
