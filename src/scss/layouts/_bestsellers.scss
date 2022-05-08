@@ -1,9 +1,9 @@
-.bestsellers{
-  &__wrapper{
-    padding: 60px 0;
+.bestsellers {
+  // &__wrapper{
+  //   padding: 60px 0;
 
-    @media (max-width: (map.get($breakpoints, 'sm') - 0.02)){
-      padding: 40px 0;
-    }
-  }
+  //   @media (max-width: (map.get($breakpoints, 'sm') - 0.02)){
+  //     padding: 40px 0;
+  //   }
+  // }
 }

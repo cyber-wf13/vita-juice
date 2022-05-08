@@ -1,13 +1,28 @@
 .swiper-bestsellers {
+  padding: 55px 0;
+
   .swiper-button-prev,
   .swiper-button-next {
     width: 25px;
     height: 35px;
     margin: 0;
     top: 50%;
-    background: url(../img/slider-arrow.svg);
+    font-family: "icon-arrow";
+    font-size: 25px;
+    color: $c-font;
+    transition: color 0.3s ease-out;
 
-    @media (max-width: (map.get($breakpoints, 'lg') - 0.02)){
+    &:before {
+      content: "\e900";
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: $c-hover;
+      }
+    }
+
+    @media (max-width: (map.get($breakpoints, "lg") - 0.02)) {
       display: none;
     }
 

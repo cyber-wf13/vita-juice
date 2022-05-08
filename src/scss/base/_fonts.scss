@@ -1,1 +1,10 @@
-@include font-face ("Bahnschrift", "Bahnschrift", 400);
+@include font-face("Bahnschrift", "Bahnschrift", 400);
+
+@font-face {
+  font-family: "icon-arrow";
+  src: url("../fonts/icon-arrow.woff") format("woff");
+}
+
+.icon-arrow:before {
+  content: "\e900";
+}

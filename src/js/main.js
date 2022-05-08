@@ -42,6 +42,7 @@ const carouselBestsellersParams = {
   loop: true,
   modules: [Navigation],
   slidesPerView: 1,
+  spaceBetween: 0,
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
@@ -52,6 +53,7 @@ const carouselBestsellersParams = {
     },
     992: {
       slidesPerView: 2,
+      simulateTouch: false,
     },
   },
 };

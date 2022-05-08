@@ -1,6 +1,7 @@
 .bestsellers-card {
-  max-width: 510px;
+  max-width: 420px;
   width: 100%;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -10,8 +11,7 @@
   transition: box-shadow 0.3s ease-out;
 
   @media (max-width: (map.get($breakpoints, "lg") - 0.02)) {
-    max-width: 100%;
-    padding: 0;
+    max-width: 220px;
   }
 
   &:hover {
@@ -23,9 +23,12 @@
   }
 
   &__img {
+    @media (max-width: (map.get($breakpoints, "lg") - 0.02)) {
+      height: 170px;
+    }
+
     @media (max-width: (map.get($breakpoints, "md") - 0.02)) {
       max-width: 335px;
-      height: 170px;
     }
 
     @media (max-width: (map.get($breakpoints, "sm") - 0.02)) {
@@ -35,7 +38,6 @@
 
   &__title {
     font-weight: 400;
-    // font-size: 40px;
     @include adaptiv-value(font-size, 40, 25, 1);
     line-height: 1em;
     text-transform: uppercase;
@@ -46,7 +48,6 @@
   &__descr {
     position: relative;
     font-weight: 400;
-    // font-size: 25px;
     @include adaptiv-value(font-size, 25, 20, 1);
     line-height: 1em;
     color: #797272;
@@ -75,7 +76,6 @@
   &__price {
     position: relative;
     font-weight: 400;
-    // font-size: 40px;
     @include adaptiv-value(font-size, 40, 30, 1);
     line-height: 1em;
     text-transform: uppercase;
@@ -97,14 +97,20 @@
   &__price-btn {
     height: 33px;
     cursor: pointer;
+    svg,
+    svg #heart-path {
+      transition: all 0.1s ease-in;
+    }
 
-    &:hover {
-      svg {
-        fill: $c-hover;
-      }
+    @media (any-hover: hover) {
+      &:hover {
+        svg {
+          fill: $c-hover;
+        }
 
-      svg #heart-path {
-        stroke: $c-hover;
+        svg #heart-path {
+          stroke: $c-hover;
+        }
       }
     }
   }
