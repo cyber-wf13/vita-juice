@@ -1,14 +1,13 @@
-// Стандартная библиотека sass
+// Стандартна бібліотека sass
 @use "sass:map";
+@use "sass:math";
 
-//Создание миксинов и переменных
-@import "helpers/mixins";
-@import "helpers/vars";
+// Підключення міксинів та змінних
+@import "helpers/helpers";
 
 // Стили для переопределения правил сторонних библоитек
 // @import 'vendors/bootstrap';
 
-// Объявление стилей для всего проекта
 @import "base/global";
 @import "base/reset";
 @import "base/fonts";

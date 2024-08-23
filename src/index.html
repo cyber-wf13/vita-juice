@@ -2,12 +2,328 @@
 <html lang="ru">
 @@include('src/components/base/_head.html', {
 "title": "Vito Juice",
-"stylesPath": "css/style.min.css",
+"stylesPath": "css/style.css",
 "faviconPath": ""
 })
 
 <body>
-
+  <div class="container container__header">
+    <header class="header"><img class="logo header__logo" src="img/header/logo.svg">
+      <div class="header__wrapper">
+        <div class="header__wrapper-top">
+          <div class="select header__select"><span class="select__mark"><svg class="select-mark-svg" width="27"
+                height="36" viewBox="0 0 27 36" fill="#2B2A29" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M13.5 36C13.7893 36 14.0786 35.8579 14.2232 35.6684C14.7536 35.0526 27 20.3211 27 13.2632C27 5.96842 20.925 0 13.5 0C6.075 0 0 5.96842 0 13.2632C0 20.3211 12.2464 35.0526 12.7768 35.6684C12.9214 35.8579 13.2107 36 13.5 36ZM13.5 1.89474C19.8643 1.89474 25.0714 7.01053 25.0714 13.2632C25.0714 18.7105 16.1518 30.2211 13.5 33.5368C9.69107 28.8 1.92857 18.1895 1.92857 13.2632C1.92857 7.01053 7.13571 1.89474 13.5 1.89474Z">
+                </path>
+                <path
+                  d="M19 12C19 8.7 16.525 6 13.5 6C10.475 6 8 8.7 8 12C8 15.3 10.475 18 13.5 18C16.525 18 19 15.3 19 12ZM9.83333 12C9.83333 9.8 11.4833 8 13.5 8C15.5167 8 17.1667 9.8 17.1667 12C17.1667 14.2 15.5167 16 13.5 16C11.4833 16 9.83333 14.2 9.83333 12Z">
+                </path>
+              </svg></span><span class="select__title">Ваш регион</span><button class="select__button"><svg
+                class="select-arrow-btn" width="16" height="16" viewBox="0 0 23 35" fill="#2B2A29"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M19.2725 0.469277C19.9863 -0.244506 21.1283 -0.10175 21.8421 0.612033C22.4131 1.32582 22.4131 2.46787 21.6994 3.18165L5.1396 17.4573L21.6994 31.8757C22.4131 32.4467 22.4131 33.5888 21.8421 34.4453C21.1283 35.1591 19.9863 35.1591 19.2725 34.5881L1.14242 18.8849C0.285879 18.1711 0.285879 16.8863 1.14242 16.1725L19.2725 0.469277Z">
+                </path>
+              </svg></button></div>
+          <div class="header__actions"><a class="cart header__cart">Корзина<span class="cart-count">(0)</span><span><svg
+                  width="46" height="37" viewBox="0 0 46 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M9.13155 4.94168L9.08091 4.8166C8.81314 4.14908 8.64971 3.81301 8.50085 3.74165C8.1924 3.59357 7.3768 3.62426 5.83918 3.68181L4.63608 3.72402C4.18416 3.73628 2.99259 3.73092 2.14934 3.72632L1.40738 3.72323C0.663125 3.72093 0.0623428 3.11401 0.0646428 2.36975C0.0669428 1.6255 0.673858 1.02474 1.41812 1.02704L2.16007 1.0301C2.97493 1.03394 4.12585 1.0393 4.56473 1.0278L5.74402 0.985593C7.71133 0.911949 8.75251 0.872038 9.66403 1.30939C10.6316 1.77283 11.039 2.47181 11.5738 3.78539C13.9961 7.98699 16.248 7.97319 20.6745 7.9471L41.8068 7.95093C42.3531 7.94557 42.8587 8.0269 43.3145 8.17727L43.4449 8.22792C44.1569 8.49108 44.7324 8.92537 45.1421 9.49929C45.5741 10.1039 45.8081 10.8397 45.8081 11.6622C45.8081 12.1571 45.7176 12.6965 45.5281 13.2674L42.5096 22.3512C41.7408 24.666 41.0686 25.9589 39.9039 26.7523C38.7292 27.5533 37.3382 27.6745 35.0962 27.6745L18.7747 27.673C16.9478 27.6784 15.246 27.2073 13.9163 26.1668C12.6955 25.2093 11.8209 23.8067 11.4948 21.8939C11.2354 20.3716 11.0129 17.9516 10.7804 15.4035C10.4229 11.4927 10.0339 7.25655 9.45918 5.7803L9.13155 4.94168ZM34.6642 28.8063C35.7315 28.8063 36.7044 29.2421 37.4095 29.9464C38.1192 30.6569 38.5551 31.6298 38.5551 32.6971C38.5551 33.7644 38.1192 34.7365 37.4149 35.4424C36.7044 36.1521 35.7315 36.588 34.6642 36.588C33.5969 36.588 32.6248 36.1521 31.9189 35.4478C31.2092 34.7365 30.7733 33.7644 30.7733 32.6971C30.7733 31.6298 31.2092 30.6569 31.9135 29.9518C32.6248 29.2421 33.5969 28.8063 34.6642 28.8063ZM35.5036 31.857C35.2911 31.6444 34.9941 31.5132 34.6642 31.5132C34.3343 31.5132 34.0373 31.6444 33.8271 31.8547C33.6115 32.0702 33.4803 32.3672 33.4803 32.6971C33.4803 33.027 33.6115 33.324 33.8217 33.5342C34.0373 33.7498 34.3343 33.881 34.6642 33.881C34.9941 33.881 35.2911 33.7498 35.5013 33.5396C35.7169 33.324 35.8481 33.027 35.8481 32.6971C35.8481 32.3672 35.7169 32.0702 35.5036 31.857ZM19.819 28.8063C20.8862 28.8063 21.8591 29.2421 22.5643 29.9464C23.274 30.6569 23.7098 31.6298 23.7098 32.6971C23.7098 33.7644 23.274 34.7365 22.5696 35.4424C21.8591 36.1521 20.8862 36.588 19.819 36.588C18.7517 36.588 17.7795 36.1521 17.0736 35.4478C16.3639 34.7365 15.9281 33.7644 15.9281 32.6971C15.9281 31.6298 16.3639 30.6569 17.0683 29.9518C17.7795 29.2421 18.7517 28.8063 19.819 28.8063ZM20.6583 31.857C20.4458 31.6444 20.1489 31.5132 19.819 31.5132C19.489 31.5132 19.1921 31.6444 18.9818 31.8547C18.7662 32.0702 18.635 32.3672 18.635 32.6971C18.635 33.027 18.7662 33.324 18.9765 33.5342C19.1921 33.7498 19.489 33.881 19.819 33.881C20.1489 33.881 20.4458 33.7498 20.656 33.5396C20.8717 33.324 21.0029 33.027 21.0029 32.6971C21.0029 32.3672 20.8717 32.0702 20.6583 31.857ZM20.686 10.6433C17.2954 10.664 14.9391 10.6778 12.8751 9.36195C13.0991 11.1558 13.2864 13.1976 13.4659 15.161C13.6899 17.614 13.904 19.9442 14.1587 21.4396C14.3628 22.6397 14.8738 23.4906 15.5767 24.0415C16.3946 24.6814 17.5209 24.9714 18.7747 24.9714L35.0962 24.9729C36.8041 24.9676 37.8131 24.9085 38.3817 24.521C38.9587 24.1282 39.3799 23.222 39.95 21.5056L42.9684 12.4218C43.0574 12.1518 43.1012 11.8963 43.1012 11.6622C43.1012 11.4113 43.0452 11.208 42.9431 11.0645C42.8541 10.9395 42.7168 10.8374 42.5388 10.7668L42.4689 10.7461C42.2848 10.6855 42.063 10.6525 41.8068 10.6525L20.686 10.6433Z"
+                    fill="#2B2A29"></path>
+                </svg></span></a><a class="cabinet header__cabinet">Войти<span><svg width="36" height="36"
+                  viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M16.6468 10.1338C16.1486 10.1338 15.7445 9.72966 15.7445 9.23142C15.7445 8.73318 16.1486 8.32907 16.6468 8.32907C19.1994 8.32907 21.4962 9.12501 23.3423 10.4985C25.2376 11.9088 26.6514 13.9258 27.3707 16.3116C28.9616 21.586 25.6171 26.154 20.645 27.6528C19.1058 28.1168 17.4602 28.2554 15.8821 28.0048C14.4907 27.7838 13.2144 27.2145 12.1223 26.4103C10.7667 25.4123 9.68484 24.046 9.00757 22.5329C7.82797 19.898 7.89805 16.863 9.63932 14.4982C10.3151 13.581 11.2292 12.8142 12.3668 12.2909C13.3991 11.8167 14.6099 11.5436 15.9844 11.5436C19.094 11.5436 21.3146 13.5293 22.3111 15.8558C23.8677 19.4877 22.3484 23.4562 17.964 23.4562C15.944 23.4562 13.9633 21.9717 13.7531 19.9189C13.6032 18.4472 14.3848 17.2231 15.5803 16.7193C16.3036 16.4144 18.0392 16.1433 18.1513 17.2953C18.1994 17.7894 17.8382 18.2304 17.3441 18.2784C16.4801 18.3644 15.4391 18.7148 15.5435 19.7358C15.6601 20.8852 16.8883 21.6515 17.964 21.6515C19.5437 21.6515 20.4757 20.9446 20.8614 19.965C21.2844 18.8923 21.0982 17.5971 20.6547 16.5607C19.9125 14.8276 18.2715 13.3483 15.9844 13.3483C14.8723 13.3483 13.9127 13.5595 13.1137 13.9268C12.2686 14.3156 11.5913 14.8834 11.091 15.5622C9.73088 17.4088 9.73344 19.7516 10.6506 21.7993C11.2031 23.0342 12.0839 24.1468 13.1863 24.9586C14.0595 25.6011 15.0708 26.0553 16.1645 26.2287C17.4643 26.4349 18.8352 26.3162 20.1304 25.9259C21.5714 25.4911 22.9075 24.7212 23.9372 23.691C25.8289 21.7973 26.4105 19.368 25.6437 16.8262C25.0376 14.8158 23.8544 13.1222 22.2712 11.9441C20.7304 10.7982 18.8019 10.1338 16.6468 10.1338Z"
+                    fill="#2B2A29"></path>
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M19.1657 36.0052C18.7206 36.0052 18.276 35.7182 18.2797 35.1433C18.2863 33.8311 18.3917 32.498 18.1983 31.1952C18.0981 30.5184 18.6797 30.0739 19.1948 30.0739C19.5371 30.0739 19.8495 30.2688 19.916 30.721C20.135 32.1938 20.0689 33.6587 20.0608 35.1433C20.0577 35.7182 19.6112 36.0052 19.1657 36.0052ZM8.57843 34.0256C7.92519 34.0256 7.32869 33.1324 7.90619 32.4771C8.90987 31.3374 9.70933 30.0396 10.5953 28.8109C10.7933 28.5357 11.0706 28.4217 11.3433 28.4217C11.9851 28.4217 12.6067 29.0549 12.1341 29.7098C11.1591 31.0637 10.2721 32.4812 9.16662 33.737C8.98709 33.9406 8.7805 34.0256 8.57843 34.0256ZM28.2131 33.6864C27.9527 33.6864 27.7048 33.5492 27.564 33.2173C26.983 31.8397 26.3158 30.4591 25.3281 29.3245C24.7552 28.6661 25.3506 27.7736 26.0013 27.7736C26.2028 27.7736 26.4095 27.8589 26.5891 28.0647C27.6853 29.3245 28.4571 30.786 29.1038 32.3175C29.406 33.0347 28.7804 33.6864 28.2131 33.6864ZM34.5419 26.5269C34.4027 26.5269 34.2559 26.4911 34.1071 26.4093C32.8523 25.7223 31.6134 25.0183 30.2465 24.5749C29.2588 24.2562 29.5499 22.8101 30.4316 22.8101C30.5217 22.8101 30.6185 22.825 30.7197 22.8582C32.2343 23.3472 33.6166 24.1094 35.0058 24.8701C35.8647 25.3401 35.3394 26.5269 34.5419 26.5269ZM2.22716 25.3868C1.41426 25.3868 0.877263 24.1917 1.75141 23.7396C3.17765 23.0015 4.74598 22.671 6.26314 22.1783C6.36505 22.1456 6.46007 22.1308 6.55014 22.1308C7.43249 22.1308 7.72518 23.5773 6.73685 23.8971C5.37305 24.3391 3.93205 24.6142 2.65073 25.2783C2.50597 25.3534 2.36226 25.3868 2.22716 25.3868ZM6.30817 17.0283C4.78004 17.0283 3.33262 16.8688 1.61969 16.835C-0.399554 16.7958 -0.339451 15.0359 1.83125 15.039C3.6585 15.0421 4.70927 15.1975 6.27337 15.246C7.40792 15.2823 7.42328 17.0283 6.30817 17.0283ZM34.8944 17.0277C33.5377 17.0277 32.1801 17.0277 30.823 17.0277C29.6731 17.0277 29.6731 15.246 30.823 15.246C32.1801 15.246 33.5377 15.246 34.8944 15.246C36.0447 15.246 36.0447 17.0277 34.8944 17.0277ZM8.37478 11.3215C8.17988 11.3215 7.97885 11.2592 7.79375 11.1112C6.72764 10.2602 5.51429 9.63251 4.22622 9.18995C3.25133 8.85646 3.53468 7.41898 4.40225 7.41898C4.49583 7.41898 4.59509 7.43535 4.70094 7.47118C6.29691 8.01958 7.73381 8.79769 9.0536 9.85037C9.76357 10.4182 9.11646 11.3215 8.37478 11.3215ZM28.468 11.2954C27.6495 11.2954 27.3901 9.88822 28.3232 9.50765C29.6557 8.96801 30.7612 7.99853 31.9565 7.22307C32.1152 7.12028 32.2712 7.07525 32.418 7.07525C33.1664 7.07525 33.659 8.2405 32.8558 8.76084C31.5121 9.63251 30.2951 10.6187 28.7963 11.2264C28.6792 11.2739 28.5691 11.2954 28.468 11.2954ZM12.9454 7.71474C12.5893 7.71474 12.2318 7.52804 12.0895 7.09733C11.6011 5.62505 10.6983 4.33656 9.91606 3.01222C9.51034 2.32419 10.1263 1.68324 10.736 1.68324C11.0062 1.68324 11.2758 1.80896 11.4547 2.11292C12.3208 3.57848 13.2681 4.99637 13.8069 6.62362C14.0257 7.28403 13.4861 7.71474 12.9454 7.71474ZM23.997 7.12599C23.4447 7.12541 22.9152 6.70242 23.1751 6.05737C23.6856 4.79636 24.2437 3.55699 24.8498 2.33794C25.0095 2.01716 25.2683 1.88426 25.5338 1.88426C26.1199 1.88426 26.7379 2.53179 26.388 3.23768C25.8515 4.31856 25.3461 5.41335 24.8938 6.53209C24.7266 6.94645 24.3573 7.12599 23.997 7.12599ZM18.231 6.38677C17.8909 6.38677 17.5808 6.19188 17.5196 5.74011C17.2889 4.05466 17.3855 2.4182 17.633 0.740947C17.6995 0.289318 18.0115 0.0944214 18.3534 0.0944214C18.8685 0.0944214 19.4501 0.53933 19.3504 1.21567C19.1534 2.54876 19.0546 3.92571 19.2388 5.26656C19.3303 5.94217 18.7456 6.38677 18.231 6.38677Z"
+                    fill="#2B2A29"></path>
+                </svg>
+              </span></a></div>
+        </div>
+        <div class="header__wrapper-bottom">
+          <nav class="nav-products">
+            <ul class="menu-products menu-products__list">
+              <li class="menu-products__item"><a href="#" style="--juice-color: #F29114">соки</a></li>
+              <li class="menu-products__item"><a href="#" style="--juice-color: #FECF3D">миксы</a></li>
+              <li class="menu-products__item"><a href="#" style="--juice-color: #F08AA8">фреши</a></li>
+              <li class="menu-products__item"><a href="#" style="--juice-color: #E5097F">смузи</a></li>
+              <li class="menu-products__item"><a href="#" style="--juice-color: #EF7F1A">чай</a></li>
+              <li class="menu-products__item"><a href="#" style="--juice-color: #7BB933">кофе</a></li>
+              <li class="menu-products__item"><a href="#" style="--juice-color: #009846">салаты</a></li>
+              <li class="menu-products__item"><a href="#" style="--juice-color: #AE4A84">ЗДОРОВАЯ ЕДА</a></li>
+            </ul>
+          </nav>
+          <nav class="nav-menu">
+            <ul class="menu-list menu-list__list">
+              <li class="menu-list__item"><a href="#">о нас</a></li>
+              <li class="menu-list__item"><a href="#">франшиза</a></li>
+              <li class="menu-list__item"><a href="#">контакты</a></li>
+              <li class="menu-list__item"><a href="#">работа</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+  </div>
+  <div class="hero">
+    <div class="swiper swiper-hero">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="hero__slide-content"><img class="hero__slide-img" src="img/hero/slider-1.png"></div>
+        </div>
+        <div class="swiper-slide">
+          <div class="hero__slide-content"><img class="hero__slide-img" src="img/hero/slider-1.png"></div>
+        </div>
+        <div class="swiper-slide">
+          <div class="hero__slide-content"><img class="hero__slide-img" src="img/hero/slider-1.png"></div>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+  </div>
+  <section class="skelet products">
+    <h2 class="title skelet__title products__title">наша продукция</h2>
+    <div class="skelet__wrapper products__wrapper">
+      <div class="products__card-items">
+        <div class="product-card products__card"><img class="product-card__img" src="img/products/cards/juice.png">
+          <h4 class="product-card__title">соки</h4>
+        </div>
+        <div class="product-card products__card"><img class="product-card__img" src="img/products/cards/mix.png">
+          <h4 class="product-card__title">миксы</h4>
+        </div>
+        <div class="product-card products__card"><img class="product-card__img" src="img/products/cards/smoothies.png">
+          <h4 class="product-card__title">смузи</h4>
+        </div>
+        <div class="product-card products__card"><img class="product-card__img" src="img/products/cards/lassy.png">
+          <h4 class="product-card__title">фреши</h4>
+        </div>
+        <div class="product-card products__card"><img class="product-card__img" src="img/products/cards/detox.png">
+          <h4 class="product-card__title">чай</h4>
+        </div>
+        <div class="product-card products__card"><img class="product-card__img" src="img/products/cards/bouly.png">
+          <h4 class="product-card__title">кофе</h4>
+        </div>
+        <div class="product-card products__card"><img class="product-card__img" src="img/products/cards/salads.png">
+          <h4 class="product-card__title">салаты</h4>
+        </div>
+        <div class="product-card products__card"><img class="product-card__img" src="img/products/cards/eat.png">
+          <h4 class="product-card__title">здоровая еда</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="skelet bestsellers">
+    <h2 class="title skelet__title bestsellers__title">хиты продаж</h2>
+    <div class="skelet__wrapper bestsellers__wrapper">
+      <div class="swiper swiper-bestsellers">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="bestsellers-card"><img class="bestsellers-card__img" src="img/bestsellers/juice.jpg">
+              <h4 class="bestsellers-card__title">Сок Naturaz</h4><span class="bestsellers-card__descr">1000</span>
+              <div class="bestsellers-card__price-wrapper"><b class="bestsellers-card__price">114</b>
+                <btn class="bestsellers-card__price-btn"><svg width="35" height="33" viewBox="0 0 35 33"
+                    fill="transparent" xmlns="http://www.w3.org/2000/svg">
+                    <path id="heart-path" fill-rule="evenodd" clip-rule="evenodd"
+                      d="M17 26.9375L5.08662 16.0104C-7.23887 4.70634 12.1976 -4.57492 17 5.39958C21.8024 -4.57492 41.2388 4.70634 28.9134 16.0104L17 26.9375Z"
+                      stroke="#2B2A29" stroke-width="2" stroke-miterlimit="22.9256"></path>
+                  </svg>
+                </btn>
+              </div>
+              <btn class="bestsellers-card__cart-btn">Корзина</btn>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="bestsellers-card"><img class="bestsellers-card__img" src="img/bestsellers/juice-fresh-apel.jpg">
+              <h4 class="bestsellers-card__title">фреш апельсиновый</h4><span class="bestsellers-card__descr">300</span>
+              <div class="bestsellers-card__price-wrapper"><b class="bestsellers-card__price">250</b>
+                <btn class="bestsellers-card__price-btn"><svg width="35" height="33" viewBox="0 0 35 33"
+                    fill="transparent" xmlns="http://www.w3.org/2000/svg">
+                    <path id="heart-path" fill-rule="evenodd" clip-rule="evenodd"
+                      d="M17 26.9375L5.08662 16.0104C-7.23887 4.70634 12.1976 -4.57492 17 5.39958C21.8024 -4.57492 41.2388 4.70634 28.9134 16.0104L17 26.9375Z"
+                      stroke="#2B2A29" stroke-width="2" stroke-miterlimit="22.9256"></path>
+                  </svg>
+                </btn>
+              </div>
+              <btn class="bestsellers-card__cart-btn">Корзина</btn>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="bestsellers-card"><img class="bestsellers-card__img" src="img/bestsellers/juice-fresh.jpg">
+              <h4 class="bestsellers-card__title">фреш яблочный</h4><span class="bestsellers-card__descr">300</span>
+              <div class="bestsellers-card__price-wrapper"><b class="bestsellers-card__price">250</b>
+                <btn class="bestsellers-card__price-btn"><svg width="35" height="33" viewBox="0 0 35 33"
+                    fill="transparent" xmlns="http://www.w3.org/2000/svg">
+                    <path id="heart-path" fill-rule="evenodd" clip-rule="evenodd"
+                      d="M17 26.9375L5.08662 16.0104C-7.23887 4.70634 12.1976 -4.57492 17 5.39958C21.8024 -4.57492 41.2388 4.70634 28.9134 16.0104L17 26.9375Z"
+                      stroke="#2B2A29" stroke-width="2" stroke-miterlimit="22.9256"></path>
+                  </svg>
+                </btn>
+              </div>
+              <btn class="bestsellers-card__cart-btn">Корзина</btn>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="bestsellers-card"><img class="bestsellers-card__img" src="img/bestsellers/juice-2.jpg">
+              <h4 class="bestsellers-card__title">сок yan</h4><span class="bestsellers-card__descr">930</span>
+              <div class="bestsellers-card__price-wrapper"><b class="bestsellers-card__price">123</b>
+                <btn class="bestsellers-card__price-btn"><svg width="35" height="33" viewBox="0 0 35 33"
+                    fill="transparent" xmlns="http://www.w3.org/2000/svg">
+                    <path id="heart-path" fill-rule="evenodd" clip-rule="evenodd"
+                      d="M17 26.9375L5.08662 16.0104C-7.23887 4.70634 12.1976 -4.57492 17 5.39958C21.8024 -4.57492 41.2388 4.70634 28.9134 16.0104L17 26.9375Z"
+                      stroke="#2B2A29" stroke-width="2" stroke-miterlimit="22.9256"></path>
+                  </svg>
+                </btn>
+              </div>
+              <btn class="bestsellers-card__cart-btn">Корзина</btn>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </div>
+  </section>
+  <section class="skelet delivery">
+    <h2 class="title skelet__title delivery__title">доставка и оплата</h2>
+    <div class="skelet__wrapper delivery__wrapper">
+      <div class="delivery__block">
+        <h4 class="delivery__block-title">Зона доставки</h4>
+        <div class="delivery__block-content">
+          <div class="delivery__zone delivery-zone">
+            <div class="delivery-zone__color" style="background-color: #FECF3D;"></div>
+            <p class="delivery-zone__text">Минимальная сумма заказа 200 грн.</p>
+          </div>
+          <div class="delivery__zone delivery-zone">
+            <div class="delivery-zone__color" style="background-color: #F29114;"></div>
+            <p class="delivery-zone__text">Минимальная сумма заказа 400 грн.</p>
+          </div>
+          <div class="delivery__zone delivery-zone">
+            <div class="delivery-zone__color" style="background-color: #F08AA8;"></div>
+            <p class="delivery-zone__text">Минимальная сумма заказа 800 грн.</p>
+          </div>
+        </div><img class="delivery__block-map" src="img/delivery/map.png">
+      </div>
+      <div class="delivery__block">
+        <h4 class="delivery__block-title">варианты оплаты</h4>
+        <div class="delivery__block-content">
+          <div class="delivery-card delivery__card">
+            <div class="delivery-card__img-wrapper"><img class="delivery-card__img" src="img/delivery/cards/money.svg">
+            </div>
+            <h4 class="delivery-card__title">наличными</h4>
+            <p class="delivery-card__text">Оплата наличными курьеру или при получении заказа</p>
+          </div>
+          <div class="delivery-card delivery__card">
+            <div class="delivery-card__img-wrapper"><img class="delivery-card__img" src="img/delivery/cards/card.svg">
+            </div>
+            <h4 class="delivery-card__title">Картой</h4>
+            <p class="delivery-card__text">Оплата банковской картой курьеру при получение заказа</p>
+          </div>
+          <div class="delivery-card delivery__card">
+            <div class="delivery-card__img-wrapper"><img class="delivery-card__img" src="img/delivery/cards/online.svg">
+            </div>
+            <h4 class="delivery-card__title">Онлайн-оплата</h4>
+            <p class="delivery-card__text">Безопасная и удобная оплата заказ на сайте</p>
+          </div>
+        </div>
+      </div>
+      <div class="delivery__block">
+        <h4 class="delivery__block-title">способы доставки</h4>
+        <div class="delivery__block-content">
+          <div class="delivery-card delivery__card">
+            <div class="delivery-card__img-wrapper"><img class="delivery-card__img"
+                src="img/delivery/cards/courier.svg">
+            </div>
+            <h4 class="delivery-card__title">курьером</h4>
+            <p class="delivery-card__text">Вы оплачиваете только заказ, доставка — бесплатно</p>
+          </div>
+          <div class="delivery-card delivery__card">
+            <div class="delivery-card__img-wrapper"><img class="delivery-card__img" src="img/delivery/cards/pickup.svg">
+            </div>
+            <h4 class="delivery-card__title">самовывоз</h4>
+            <p class="delivery-card__text">Можете сами забрать заказ, указав это при оформлении заказа.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="skelet loyalty">
+    <h2 class="title skelet__title loyalty__title">Наша система лояльности</h2>
+    <div class="skelet__wrapper loyalty__wrapper">
+      <div class="container">
+        <div class="loyalty__wrapper-inner">
+          <div class="loyalty-card">
+            <div class="loyalty-card__top">
+              <div class="loyalty-card__header">
+                <div class="loyalty-card__logo-wrapper"><img class="loyalty-card__logo-img"
+                    src="img/loyalty/card/logo.svg"><span class="loyalty-card__logo-text">Вита Джус</span></div>
+                <div class="loyalty-card__balance"><span class="loyalty-card__balance-text">Баланс</span><span
+                    class="loyalty-card__balance-count">500</span></div>
+              </div><img class="loyalty-card__img" src="img/loyalty/card/juice.png">
+              <div class="loyalty-card__info">
+                <h6 class="loyalty-card__info-title">Владелец</h6>
+                <div class="loyalty-card__info-wrapper"><span class="loyalty-card__info-name">Имя</span><span
+                    class="loyalty-card__info-curname">Фамилия</span></div>
+              </div>
+            </div>
+            <div class="loyalty-card__bottom"><img class="loyalty-card__code" src="img/loyalty/card/code.svg"></div>
+          </div>
+          <div class="loyalty__content">
+            <h4 class="loyalty__sub-title">С картой вы получаете</h4>
+            <ul class="loyalty-list loyalty__list">
+              <li class="loyalty-list__item">
+                <div class="loyalty-list__wrapper-img"><img class="loyalty-list__img" src="img/loyalty/list/phone.svg">
+                </div><span class="loyalty-list__text">Всегда рядом в вашем телефоне</span>
+              </li>
+              <li class="loyalty-list__item">
+                <div class="loyalty-list__wrapper-img"><img class="loyalty-list__img" src="img/loyalty/list/gift.svg">
+                </div><span class="loyalty-list__text">Участвуй в акциях и получай подарки</span>
+              </li>
+              <li class="loyalty-list__item">
+                <div class="loyalty-list__wrapper-img"><img class="loyalty-list__img" src="img/loyalty/list/drink.svg">
+                </div><span class="loyalty-list__text">Каждый 5-й напиток бесплатно</span>
+              </li>
+            </ul>
+            <div class="loyalty__block"><span class="loyalty__text">Хотите оформить?</span>
+              <btn class="loyalty__btn">получить</btn>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="footer__container container">
+      <h2 class="title footer__title">правовая информация</h2>
+      <div class="footer__list-items">
+        <ul class="list-info footer__list-info">
+          <li class="list-info__item"><span class="list-info__text">Все права пренадлежат ООО «Компания Вита Джус</span>
+          </li>
+          <li class="list-info__item"><span class="list-info__text">ИНН 12345678/ОГРН1234567898012</span></li>
+        </ul>
+        <ul class="list-links footer__list-links">
+          <li class="list-links__item"><a class="list-links__link" href="#">Публичная оферта</a></li>
+          <li class="list-links__item"><a class="list-links__link" href="#">Политика конфиденциальности</a></li>
+        </ul>
+        <ul class="list-links footer__list-links">
+          <li class="list-links__item"><a class="list-links__link" href="#">Пользовательское соглашение</a></li>
+          <li class="list-links__item"><a class="list-links__link" href="#">Бонусная программа</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="social">
+      <div class="container social__container">
+        <h2 class="title social__title">присоединяйтесь к vita juice</h2>
+        <div class="social__wrapper"><a class="social__link" href="#"><img class="social__link-img"
+              src="img/social/vk.svg"></a><a class="social__link" href="#"><img class="social__link-img"
+              src="img/social/instagram.svg"></a><a class="social__link" href="#"><img class="social__link-img"
+              src="img/social/facebook.svg"></a></div>
+      </div>
+    </div>
+  </footer>
 
   @@include('src/components/base/_scripts.html', {
   "scriptPath": "js/main.bundle.js"

@@ -1,12 +1,13 @@
-// Стандартная библиотека sass
+// Підключення міксинів та змінних
 @use "sass:map";
+@import "helpers/helpers";
 
-@import 'helpers/mixins';
-@import 'helpers/vars';
+// Перевизначення змінних за замовчуванням
+// @import "vendors/vars";
 
-@import 'swiper/swiper';
-@import 'swiper/modules/navigation/navigation';
-@import 'swiper/modules/pagination/pagination';
+@import "swiper/swiper";
+// @import "swiper/modules/navigation/navigation";
+// @import "swiper/modules/pagination/pagination";
 
-@import 'vendors/swiperHero';
-@import 'vendors/swiperBestsellers';
+@import "vendors/swiperHero";
+@import "vendors/swiperBestsellers";
