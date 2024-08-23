@@ -24,6 +24,8 @@ import { Loyalty } from "./components/loyalty/classLoyalty";
 import { Footer } from "./components/base/classFooter";
 import { Social } from "./components/base/classSocial";
 import { Select } from "./components/select/classSelect";
+import { ConstructDOM } from "./core/DOM/ConstructDOM";
+import { ConstructListDOM } from "./core/DOM/ConstructListDOM";
 
 const carouselHeroParams = {
   loop: true,
@@ -61,6 +63,11 @@ const carouselBestsellersParams = {
 };
 
 const render = () => {
+  const cd = new ConstructDOM("h1", ["as"]);
+  const list = new ConstructListDOM(["text", cd], ["list"], ["list-items"]);
+  // console.log(new ConstructDOM().elem);
+  console.log(list.elem);
+
   // const header = new Header("header", "header"),
   //   headerActions = new Skelet("div", "header__actions"),
   //   cart = header.createCart(),

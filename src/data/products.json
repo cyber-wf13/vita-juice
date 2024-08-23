@@ -1,0 +1,30 @@
+[
+  {
+    "title": "Сок Naturaz",
+    "ml": "1000",
+    "price": "114",
+    "imgPath": "img/bestsellers/juice.jpg",
+    "type": "juice"
+  },
+  {
+    "title": "фреш апельсиновый",
+    "ml": "300",
+    "price": "250",
+    "imgPath": "img/bestsellers/juice-fresh-apel.jpg",
+    "type": "lassy"
+  },
+  {
+    "title": "фреш яблочный",
+    "ml": "300",
+    "price": "250",
+    "imgPath": "img/bestsellers/juice-fresh.jpg",
+    "type": "lassy"
+  },
+  {
+    "title": "сок yan",
+    "ml": "930",
+    "price": "123",
+    "imgPath": "img/bestsellers/juice-2.jpg",
+    "type": "juice"
+  }
+]

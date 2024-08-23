@@ -10,33 +10,33 @@ export class Skelet {
   }
 
   // Метод возвращает DOM-элемент с параметрами, которые были определенны в конструкторе (класс и вид узла)
-  createElement() {
-    const elem = document.createElement(this.selector);
+  // createElement() {
+  //   const elem = document.createElement(this.selector);
 
-    // Проверка в случаи если в конструктор не был передан строка с классом или пустая строка
-    if (
-      this.className === false ||
-      this.className == " " ||
-      this.className == ""
-    ) {
-      return elem;
-    }
+  //   // Проверка в случаи если в конструктор не был передан строка с классом или пустая строка
+  //   if (
+  //     this.className === false ||
+  //     this.className == " " ||
+  //     this.className == ""
+  //   ) {
+  //     return elem;
+  //   }
 
-    if (typeof this.className == "string") {
-      elem.classList.add(this.className);
-    } else if (typeof this.className == "object") {
-      // Та же проверка, что и выше, но для каждого элемента массива
-      this.className.forEach((className, idx) => {
-        if (className === false || className == " " || className == "") {
-          this.className.splice(idx, 1);
-        }
-      });
+  //   if (typeof this.className == "string") {
+  //     elem.classList.add(this.className);
+  //   } else if (typeof this.className == "object") {
+  //     // Та же проверка, что и выше, но для каждого элемента массива
+  //     this.className.forEach((className, idx) => {
+  //       if (className === false || className == " " || className == "") {
+  //         this.className.splice(idx, 1);
+  //       }
+  //     });
 
-      elem.classList.add(...this.className);
-    }
+  //     elem.classList.add(...this.className);
+  //   }
 
-    return elem;
-  }
+  //   return elem;
+  // }
 
   /*   
   Данный метод создает базовую структуру списка ul > li > {{listContent}}
@@ -46,76 +46,76 @@ export class Skelet {
   arrayWrapper - булевое - если контент listContent не статичный, а список рахзных элементов
   customPrefix - строка/булевое - если нужно задать префикс, который отличается от основного префикса 
    */
-  createList(
-    listContent,
-    className,
-    prefix,
-    arrayWrapper = false,
-    customPrefix = false
-  ) {
-    let listClassNames = [className, `${prefix}__list`];
+  // createList(
+  //   listContent,
+  //   className,
+  //   prefix,
+  //   arrayWrapper = false,
+  //   customPrefix = false,
+  // ) {
+  //   let listClassNames = [className, `${prefix}__list`];
 
-    if (prefix === false && customPrefix != false) {
-      listClassNames[1] = customPrefix;
-    }
+  //   if (prefix === false && customPrefix != false) {
+  //     listClassNames[1] = customPrefix;
+  //   }
 
-    const list = new Skelet("ul", listClassNames);
+  //   const list = new Skelet("ul", listClassNames);
 
-    if (arrayWrapper == true) {
-      listContent.forEach((item) => {
-        let listItem = new Skelet("li", `${className}__item`);
-        if (typeof item == "string") {
-          listItem.setContent(item);
-        } else {
-          listItem.insertItems(item);
-        }
-        list.insertItems(listItem);
-      });
-    } else {
-      let listItem = new Skelet("li", `${className}__item`);
-      listItem.insertItems(listContent);
-      list.insertItems(listItem);
-    }
+  //   if (arrayWrapper == true) {
+  //     listContent.forEach((item) => {
+  //       let listItem = new Skelet("li", `${className}__item`);
+  //       if (typeof item == "string") {
+  //         listItem.setContent(item);
+  //       } else {
+  //         listItem.insertItems(item);
+  //       }
+  //       list.insertItems(listItem);
+  //     });
+  //   } else {
+  //     let listItem = new Skelet("li", `${className}__item`);
+  //     listItem.insertItems(listContent);
+  //     list.insertItems(listItem);
+  //   }
 
-    return list;
-  }
+  //   return list;
+  // }
 
-  createTitle(titleText, className = " ") {
-    let titleClassNames = ["title"];
-    if (Array.isArray(className)) {
-      titleClassNames.push(...className);
-    } else {
-      titleClassNames.push(className);
-    }
-    const title = new Skelet("h2", titleClassNames);
-    title.setContent(titleText);
+  // createTitle(titleText, className = " ") {
+  //   let titleClassNames = ["title"];
+  //   if (Array.isArray(className)) {
+  //     titleClassNames.push(...className);
+  //   } else {
+  //     titleClassNames.push(className);
+  //   }
+  //   const title = new Skelet("h2", titleClassNames);
+  //   title.setContent(titleText);
 
-    return title;
-  }
+  //   return title;
+  // }
 
   /*  Метод позволяет вставить DOM-элемент 
     items - объект/массив - элементы, которые нужно вставить
     prepend - булевое - позволяет вставить элемент до или после дочерных элементов, которые уже присутствуют
   */
-  insertItems(items, prepend = true) {
-    if (Array.isArray(items)) {
-      items.forEach((item) => {
-        prepend ? this.elem.append(item.elem) : this.elem.prepend(item.elem);
-      });
-    } else {
-      prepend ? this.elem.append(items.elem) : this.elem.prepend(items.elem);
-    }
-  }
+  // insertItems(items, prepend = true) {
+  //   if (Array.isArray(items)) {
+  //     items.forEach((item) => {
+  //       prepend ? this.elem.append(item.elem) : this.elem.prepend(item.elem);
+  //     });
+  //   } else {
+  //     prepend ? this.elem.append(items.elem) : this.elem.prepend(items.elem);
+  //   }
+  // }
 
-  setAttr(attr, value) {
-    this.elem.setAttribute(attr, value);
-  }
+  // setAttr(attr, value) {
+  //   this.elem.setAttribute(attr, value);
+  // }
 
-  setContent(text) {
-    this.elem.textContent = text;
-  }
+  // setContent(text) {
+  //   this.elem.textContent = text;
+  // }
 
-  setHtml(html) {
-    this.elem.innerHTML = html;
-  }
+  // setHtml(html) {
+  //   this.elem.innerHTML = html;
+  // }
 }

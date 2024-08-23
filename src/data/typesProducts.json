@@ -1,0 +1,58 @@
+[
+  {
+    "name": "juice",
+    "text": "соки",
+    "link": "#",
+    "color": "F29114",
+    "img": "img/products/cards/juice.png"
+  },
+  {
+    "name": "mix",
+    "text": "миксы",
+    "link": "#",
+    "color": "FECF3D",
+    "img": "img/products/cards/mix.png"
+  },
+  {
+    "name": "lassy",
+    "text": "фреши",
+    "link": "#",
+    "color": "F08AA8",
+    "img": "img/products/cards/lassy.png"
+  },
+  {
+    "name": "smoothies",
+    "text": "смузи",
+    "link": "#",
+    "color": "E5097F",
+    "img": "img/products/cards/smoothies.png"
+  },
+  {
+    "name": "detox",
+    "text": "чай",
+    "link": "#",
+    "color": "EF7F1A",
+    "img": "img/products/cards/detox.png"
+  },
+  {
+    "name": "bouly",
+    "text": "кофе",
+    "link": "#",
+    "color": "7BB933",
+    "img": "img/products/cards/bouly.png"
+  },
+  {
+    "name": "salads",
+    "text": "салаты",
+    "link": "#",
+    "color": "009846",
+    "img": "img/products/cards/salads.png"
+  },
+  {
+    "name": "eat",
+    "text": "ЗДОРОВАЯ ЕДА",
+    "link": "#",
+    "color": "AE4A84",
+    "img": "img/products/cards/eat.png"
+  }
+]
