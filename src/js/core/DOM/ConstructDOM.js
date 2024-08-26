@@ -1,8 +1,11 @@
 export class ConstructDOM {
-  constructor(selector = "div", classNames = []) {
+  constructor(selector = "div", classNames = [], content = null) {
     this.classNames = classNames;
     this.selector = selector;
     this.elem = this.createElement();
+    if (content) {
+      this.setContent(content);
+    }
   }
 
   createElement() {
@@ -25,8 +28,10 @@ export class ConstructDOM {
     }
   }
 
-  setAttr(attr, value) {
-    this.elem.setAttribute(attr, value);
+  setAttr(attrObj) {
+    for (const [attrName, attrValue] of Object.entries(attrObj)) {
+      this.elem.setAttribute(attrName, attrValue);
+    }
   }
 
   setContent(text) {

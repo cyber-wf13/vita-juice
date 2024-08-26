@@ -1,4 +1,4 @@
-import { body, browserBreakpoint } from "./utils";
+import { body, browserBreakpoint, getInfoByServer } from "./utils";
 import { Navigation, Pagination } from "swiper";
 import {
   navProductsInfo,
@@ -26,6 +26,10 @@ import { Social } from "./components/base/classSocial";
 import { Select } from "./components/select/classSelect";
 import { ConstructDOM } from "./core/DOM/ConstructDOM";
 import { ConstructListDOM } from "./core/DOM/ConstructListDOM";
+import {
+  generateNavProducts,
+  generateListProducts,
+} from "./components/generateListProducts";
 
 const carouselHeroParams = {
   loop: true,
@@ -63,10 +67,49 @@ const carouselBestsellersParams = {
 };
 
 const render = () => {
-  const cd = new ConstructDOM("h1", ["as"]);
-  const list = new ConstructListDOM(["text", cd], ["list"], ["list-items"]);
+  getInfoByServer("data/typesProducts.json").then((types) => {
+    generateListProducts(
+      types,
+      ".nav-products",
+      ["menu-products", "menu-products__list"],
+      (type) => {
+        const listItem = new ConstructDOM("li", ["menu-products__item"]);
+        const listItemLink = new ConstructDOM("a", [], type.text);
+
+        listItemLink.setAttr({
+          "href": "#",
+          "style": `--juice-color: #${type["color"]}`,
+        });
+        listItem.insertItems([listItemLink]);
+        return listItem;
+      },
+    );
+    generateListProducts(
+      types,
+      ".products__wrapper",
+      ["products__card-items"],
+      (type) => {
+        const listItem = new ConstructDOM("li", [
+          "product-card",
+          "products__card",
+        ]);
+        const listItemImg = new ConstructDOM("img", ["product-card__img"]);
+        const listItemTitle = new ConstructDOM("h4", ["product-card__title"]);
+
+        listItemImg.setAttr({
+          "src": type.img,
+        });
+        listItemTitle.setContent(type.text);
+        listItem.insertItems([listItemImg, listItemTitle]);
+        return listItem;
+      },
+    );
+  });
+
+  // const cd = new ConstructDOM("h1", ["as"]);
+  // const list = new ConstructListDOM(["text", cd], ["list"], ["list-items"]);
   // console.log(new ConstructDOM().elem);
-  console.log(list.elem);
+  // console.log(list.elem);
 
   // const header = new Header("header", "header"),
   //   headerActions = new Skelet("div", "header__actions"),
