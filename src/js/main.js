@@ -25,7 +25,8 @@ import { Footer } from "./components/base/classFooter";
 import { Social } from "./components/base/classSocial";
 import { Select } from "./components/select/classSelect";
 import { ConstructDOM } from "./core/DOM/ConstructDOM";
-import { ConstructListDOM } from "./core/DOM/ConstructListDOM";
+import { ConstructModalDOM } from "./core/DOM/ConstructModalDOM";
+
 import {
   generateNavProducts,
   generateListProducts,
@@ -106,6 +107,7 @@ const render = () => {
     );
   });
 
+  const modalRegion = new ConstructModalDOM(".select", [], "Ваш регион");
   // const cd = new ConstructDOM("h1", ["as"]);
   // const list = new ConstructListDOM(["text", cd], ["list"], ["list-items"]);
   // console.log(new ConstructDOM().elem);
