@@ -31,6 +31,8 @@ import {
   generateNavProducts,
   generateListProducts,
 } from "./components/generateListProducts";
+import { generateModalRegion } from "./components/generateModalRegion";
+import { ConstructListDOM } from "./core/DOM/ConstructListDOM";
 
 const carouselHeroParams = {
   loop: true,
@@ -107,7 +109,35 @@ const render = () => {
     );
   });
 
-  const modalRegion = new ConstructModalDOM(".select", [], "Ваш регион");
+  getInfoByServer("data/cities.json").then((cities) => {
+    const modalContent = generateModalRegion(cities, (city) => {
+      const listItem = new ConstructDOM("li", ["region-list__item"]);
+      const radioItem = new ConstructDOM("input", [
+        "region-list__radio",
+        "_visually-hidden",
+      ]);
+      const labelItem = new ConstructDOM("label", ["region-list__label"]);
+
+      radioItem.setAttr({
+        "name": "region",
+        "value": city.id,
+        "type": "radio",
+      });
+
+      radioItem.elem.addEventListener("change", (e) => {
+        const form = document.forms["region"];
+        form.submit();
+      });
+
+      labelItem.setContent(city.name);
+      labelItem.insertItems([radioItem]);
+      listItem.insertItems([labelItem]);
+      return listItem;
+    });
+
+    new ConstructModalDOM(".select", [modalContent], "Ваш регион");
+  });
+
   // const cd = new ConstructDOM("h1", ["as"]);
   // const list = new ConstructListDOM(["text", cd], ["list"], ["list-items"]);
   // console.log(new ConstructDOM().elem);

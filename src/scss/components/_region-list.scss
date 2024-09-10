@@ -8,13 +8,15 @@
 
   &__item {
     margin-bottom: 8px;
-    transition: color 0.3s ease-out;
-    cursor: pointer;
 
     @media (max-width: (map.get($breakpoints, "sm") - 0.02)) {
       font-size: 18px;
     }
+  }
 
+  &__label {
+    transition: color 0.3s ease-out;
+    cursor: pointer;
     @media (any-hover: hover) {
       &:hover {
         color: $c-hover;
