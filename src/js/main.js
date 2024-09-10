@@ -126,7 +126,8 @@ const render = () => {
 
       radioItem.elem.addEventListener("change", (e) => {
         const form = document.forms["region"];
-        form.submit();
+        const title = form.querySelector("#region-title");
+        title.textContent = "Ваш город: " + city.name;
       });
 
       labelItem.setContent(city.name);
