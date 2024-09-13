@@ -1,5 +1,4 @@
 import { body, browserBreakpoint, getInfoByServer } from "./utils";
-import { Navigation, Pagination } from "swiper";
 import {
   navProductsInfo,
   navMenuInfo,
@@ -33,41 +32,12 @@ import {
 } from "./components/generateListProducts";
 import { generateModalRegion } from "./components/generateModalRegion";
 import { ConstructListDOM } from "./core/DOM/ConstructListDOM";
-
-const carouselHeroParams = {
-  loop: true,
-  modules: [Navigation, Pagination],
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-};
-
-const carouselBestsellersParams = {
-  loop: true,
-  modules: [Navigation],
-  spaceBetween: 0,
-  simulateTouch: false,
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-  breakpoints: {
-    1400: {
-      slidesPerView: 3,
-    },
-    992: {
-      slidesPerView: 2,
-    },
-    320: {
-      slidesPerView: 1,
-    },
-  },
-};
+import { SwiperWrapper } from "./components/swiper-wrapper/SwiperWrapper";
+import {
+  carouselBestsellersParams,
+  carouselHeroParams,
+} from "./components/swiper-wrapper/initParams";
+import { generateSlideHero } from "./components/generateSlideHero";
 
 const render = () => {
   getInfoByServer("data/typesProducts.json").then((types) => {
@@ -138,6 +108,23 @@ const render = () => {
 
     new ConstructModalDOM(".select", [modalContent], "Ваш регион");
   });
+
+  getInfoByServer("data/products.json").then((products) => {
+    new SwiperWrapper(".bestsellers__wrapper", [], carouselBestsellersParams, [
+      "swiper-bestsellers",
+    ]);
+  });
+
+  const heroCarouselItems = generateSlideHero(
+    ["img/hero/slider-1.png", "img/hero/slider-1.png", "img/hero/slider-1.png"],
+    ["hero__slide-content"],
+    ["hero__slide-img"],
+  );
+
+  new SwiperWrapper(".hero", heroCarouselItems, carouselHeroParams, [
+    "swiper-hero",
+  ]);
+  // console.log(swiper.elem);
 
   // const cd = new ConstructDOM("h1", ["as"]);
   // const list = new ConstructListDOM(["text", cd], ["list"], ["list-items"]);
