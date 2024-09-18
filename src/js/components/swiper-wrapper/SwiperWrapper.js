@@ -26,7 +26,7 @@ export class SwiperWrapper extends ConstructDOM {
     });
     wrapper.insertItems(slides);
     const modules = this.getSwiperModules();
-    console.log(modules);
+    // console.log(modules);
 
     this.insertItems([wrapper, ...modules]);
   }

@@ -26,5 +26,19 @@
     "price": "123",
     "imgPath": "img/bestsellers/juice-2.jpg",
     "type": "juice"
+  },
+  {
+    "title": "сок yan",
+    "ml": "130",
+    "price": "222",
+    "imgPath": "img/bestsellers/juice-fresh.jpg",
+    "type": "juice"
+  },
+  {
+    "title": "сок yan",
+    "ml": "1000",
+    "price": "333",
+    "imgPath": "img/bestsellers/juice-2.jpg",
+    "type": "juice"
   }
 ]

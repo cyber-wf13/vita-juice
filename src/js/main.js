@@ -38,6 +38,7 @@ import {
   carouselHeroParams,
 } from "./components/swiper-wrapper/initParams";
 import { generateSlideHero } from "./components/generateSlideHero";
+import { generateBestProducts } from "./components/generateBestProducts";
 
 const render = () => {
   getInfoByServer("data/typesProducts.json").then((types) => {
@@ -110,9 +111,14 @@ const render = () => {
   });
 
   getInfoByServer("data/products.json").then((products) => {
-    new SwiperWrapper(".bestsellers__wrapper", [], carouselBestsellersParams, [
-      "swiper-bestsellers",
-    ]);
+    const bestProductsItems = generateBestProducts(products);
+
+    new SwiperWrapper(
+      ".bestsellers__wrapper",
+      bestProductsItems,
+      carouselBestsellersParams,
+      ["swiper-bestsellers"],
+    );
   });
 
   const heroCarouselItems = generateSlideHero(
