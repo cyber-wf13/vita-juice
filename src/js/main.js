@@ -1,37 +1,9 @@
-import { body, browserBreakpoint, getInfoByServer } from "./utils";
-import {
-  navProductsInfo,
-  navMenuInfo,
-  heroImgPaths,
-  productCardInfo,
-  bestsellersCardInfo,
-  deliveryBlockInfo,
-  loyaltyListInfo,
-  footerInfo,
-  socialInfo,
-} from "./infoOfServer";
-
-import { Skelet } from "./classSkelet";
-import { Carousel } from "./classCarousel";
-
-import { Header } from "./components/base/classHeader";
-import { Hero } from "./components/hero/classHero";
-import { Production } from "./components/production/classProduction";
-import { Bestsellers } from "./components/bestsellers/classBestsellers";
-import { Delivery } from "./components/delivery/classDelivery";
-import { Loyalty } from "./components/loyalty/classLoyalty";
-import { Footer } from "./components/base/classFooter";
-import { Social } from "./components/base/classSocial";
-import { Select } from "./components/select/classSelect";
+import { getInfoByServer } from "./utils";
 import { ConstructDOM } from "./core/DOM/ConstructDOM";
 import { ConstructModalDOM } from "./core/DOM/ConstructModalDOM";
 
-import {
-  generateNavProducts,
-  generateListProducts,
-} from "./components/generateListProducts";
+import { generateListProducts } from "./components/generateListProducts";
 import { generateModalRegion } from "./components/generateModalRegion";
-import { ConstructListDOM } from "./core/DOM/ConstructListDOM";
 import { SwiperWrapper } from "./components/swiper-wrapper/SwiperWrapper";
 import {
   carouselBestsellersParams,
@@ -98,7 +70,7 @@ const render = () => {
       radioItem.elem.addEventListener("change", (e) => {
         const form = document.forms["region"];
         const title = form.querySelector("#region-title");
-        title.textContent = "Ваш город: " + city.name;
+        title.textContent = "Ваше місто: " + city.name;
       });
 
       labelItem.setContent(city.name);
@@ -107,7 +79,7 @@ const render = () => {
       return listItem;
     });
 
-    new ConstructModalDOM(".select", [modalContent], "Ваш регион");
+    new ConstructModalDOM(".select", [modalContent], "Ваш регіон");
   });
 
   getInfoByServer("data/products.json").then((products) => {
@@ -130,187 +102,6 @@ const render = () => {
   new SwiperWrapper(".hero", heroCarouselItems, carouselHeroParams, [
     "swiper-hero",
   ]);
-  // console.log(swiper.elem);
-
-  // const cd = new ConstructDOM("h1", ["as"]);
-  // const list = new ConstructListDOM(["text", cd], ["list"], ["list-items"]);
-  // console.log(new ConstructDOM().elem);
-  // console.log(list.elem);
-
-  // const header = new Header("header", "header"),
-  //   headerActions = new Skelet("div", "header__actions"),
-  //   cart = header.createCart(),
-  //   cabinet = header.createCabinet(),
-  //   navProducts = new Skelet("nav", "nav-products"),
-  //   navProductsContent = header.createNavListContent(navProductsInfo),
-  //   navProductList = header.createList(
-  //     navProductsContent,
-  //     "menu-products",
-  //     "menu-products",
-  //     true
-  //   ),
-  //   navMenu = new Skelet("nav", "nav-menu");
-  // let navMenuContent = header.createNavListContent(navMenuInfo);
-  // if (
-  //   browserBreakpoint == "md" ||
-  //   browserBreakpoint == "sm" ||
-  //   browserBreakpoint == "xs"
-  // ) {
-  //   const menuLink = header.createMobileButton("menu-btn", navProducts, "меню");
-  //   menuLink.setContent("меню");
-  //   navMenuContent = [menuLink, ...navMenuContent];
-  // }
-  // const navMenuList = header.createList(
-  //     navMenuContent,
-  //     "menu-list",
-  //     "menu-list",
-  //     true
-  //   ),
-  //   selectHeader = new Select("div", "select", "header", "Ваш регион");
-  // navProducts.insertItems(navProductList);
-  // navMenu.insertItems(navMenuList);
-  // if (
-  //   browserBreakpoint == "md" ||
-  //   browserBreakpoint == "sm" ||
-  //   browserBreakpoint == "xs"
-  // ) {
-  //   const menuButton = header.createMobileButton(
-  //       "menu-btn",
-  //       navProducts,
-  //       "меню"
-  //     ),
-  //     burger = header.createMobileButton("burger", navMenu, header.logo);
-  //   menuButton.setContent("меню");
-  //   header.topHeaderWrapper.insertItems([
-  //     burger,
-  //     menuButton,
-  //     selectHeader,
-  //     cart,
-  //     cabinet,
-  //   ]);
-  // } else {
-  //   headerActions.insertItems([cart, cabinet]);
-  //   header.topHeaderWrapper.insertItems([selectHeader, headerActions]);
-  //   header.bottomHeaderWrapper.insertItems([navProducts, navMenu]);
-  // }
-  // const headerContainer = header.createCarcass();
-  // const hero = new Hero("div", "hero");
-  // const heroCarousel = new Carousel(carouselHeroParams, "swiper-hero", {
-  //   navigation: true,
-  //   pagination: true,
-  // });
-  // heroCarousel.createSlide(hero.createSliderImg(heroImgPaths));
-  // hero.insertItems(heroCarousel.carouselSkelet);
-  // const production = new Production("наша продукция", "products");
-  // production.sectionWrapper.insertItems(
-  //   production.getProductCard(productCardInfo)
-  // );
-  // const bestsellers = new Bestsellers("хиты продаж", "bestsellers");
-  // const bestsellersCarousel = new Carousel(
-  //   carouselBestsellersParams,
-  //   "swiper-bestsellers",
-  //   {
-  //     pagination: true,
-  //   }
-  // );
-  // bestsellers.sectionWrapper.insertItems(bestsellersCarousel.carouselSkelet);
-  // bestsellersCarousel.createSlide(
-  //   bestsellers.getBestsellersCard(bestsellersCardInfo)
-  // );
-  // const delivery = new Delivery("доставка и оплата", "delivery");
-  // const deliveryBlockZones = delivery.setDeliveryContent(
-  //     "Зона доставки",
-  //     delivery.createDeliveryZones(deliveryBlockInfo.deliveryZone)
-  //   ),
-  //   deliveryBlockPayment = delivery.setDeliveryContent(
-  //     "варианты оплаты",
-  //     delivery.createDeliveryOptions(deliveryBlockInfo.deliveryPayment)
-  //   ),
-  //   deliveryBlockWays = delivery.setDeliveryContent(
-  //     "способы доставки",
-  //     delivery.createDeliveryOptions(deliveryBlockInfo.deliveryWays)
-  //   );
-  // const deliveryBlockZonesMap = new Skelet("img", "delivery__block-map");
-  // deliveryBlockZonesMap.setAttr("src", "img/delivery/map.png");
-  // deliveryBlockZones.insertItems(deliveryBlockZonesMap);
-  // delivery.sectionWrapper.insertItems([
-  //   deliveryBlockZones,
-  //   deliveryBlockPayment,
-  //   deliveryBlockWays,
-  // ]);
-  // const loyalty = new Loyalty("Наша система лояльности", "loyalty"),
-  //   loyaltyListContent = loyalty.createListContent(loyaltyListInfo),
-  //   loyaltyList = loyalty.createList(
-  //     loyaltyListContent,
-  //     "loyalty-list",
-  //     "loyalty",
-  //     true
-  //   ),
-  //   loyaltyBlockText = loyalty.createBlockText(),
-  //   loyaltyBlockContent = loyalty.createContentBlockInner(
-  //     [loyalty.subTitle, loyaltyList, loyaltyBlockText],
-  //     "div",
-  //     "loyalty__content"
-  //   ),
-  //   loyaltyCard = loyalty.createCard(),
-  //   loyaltyWrapperInner = loyalty.createContentBlockInner(
-  //     [loyaltyCard, loyaltyBlockContent],
-  //     "div",
-  //     "loyalty__wrapper-inner"
-  //   );
-  // loyalty.container.insertItems(loyaltyWrapperInner);
-  // loyalty.sectionWrapper.insertItems(loyalty.container);
-  // const footer = new Footer("footer", "footer"),
-  //   footerListInfoContent = footer.createListInfoContent(footerInfo.infoText),
-  //   footerListInfo = footer.createList(
-  //     footerListInfoContent,
-  //     "list-info",
-  //     false,
-  //     true,
-  //     "footer__list-info"
-  //   ),
-  //   footerListLinksContent = footer.createListContent(footerInfo.infoLink),
-  //   footerListLinks = footer.createList(
-  //     footerListLinksContent,
-  //     "list-links",
-  //     false,
-  //     true,
-  //     "footer__list-links"
-  //   ),
-  //   footerListBonusContent = footer.createListContent(footerInfo.infoBonus),
-  //   footerListBonus = footer.createList(
-  //     footerListBonusContent,
-  //     "list-links",
-  //     false,
-  //     true,
-  //     "footer__list-links"
-  //   );
-  // footer.listWrapper.insertItems([
-  //   footerListInfo,
-  //   footerListLinks,
-  //   footerListBonus,
-  // ]);
-  // const social = new Social("div", "social");
-  // social.createSocialLinks(socialInfo);
-  // const socialCollected = social.collectSocial();
-  // body.prepend(
-  //   headerContainer.elem,
-  //   hero.elem,
-  //   production.collectElements(),
-  //   bestsellers.collectElements(),
-  //   delivery.collectElements(),
-  //   loyalty.collectElements(),
-  //   footer.collectFooter(socialCollected)
-  // );
-  // heroCarousel.init();
-  // bestsellersCarousel.init();
-  // if (
-  //   browserBreakpoint == "md" ||
-  //   browserBreakpoint == "sm" ||
-  //   browserBreakpoint == "xs"
-  // ) {
-  //   bestsellersCarousel.swiperObj.navigation.destroy();
-  // }
 };
 
 render();

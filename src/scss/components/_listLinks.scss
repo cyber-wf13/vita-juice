@@ -1,10 +1,10 @@
-.list-links{
+.list-links {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 
-  &__item{
-    @include adaptiv-value(font-size, 30, 18, 1);
+  &__item {
     line-height: 1em;
+    @include adaptiv-value(font-size, 30, 18, 1);
   }
 }

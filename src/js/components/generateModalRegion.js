@@ -11,11 +11,11 @@ export function generateModalRegion(cities, generateItemFunc) {
   const lists = new ConstructDOM("div", ["region__lists"]);
 
   region.setAttr({ "method": "get", "action": "/", "name": "region" });
-  headTitle.setContent("Выберите город");
+  headTitle.setContent("Виберіть місто");
   headTitle.setAttr({ "id": "region-title" });
-  headBtn.setContent("Отправить");
+  headBtn.setContent("Надіслати");
   headBtn.setAttr({ "type": "submit" });
-  bodyTitle.setContent("Выбрать из списка");
+  bodyTitle.setContent("Вибрати зі списку");
 
   const contentList = cities.map((city) => generateItemFunc(city));
 

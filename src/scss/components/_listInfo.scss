@@ -1,12 +1,12 @@
-.list-info{
-  &__item{
-    @include adaptiv-value(font-size, 30, 18, 1);
+.list-info {
+  &__item {
     line-height: 1em;
 
-    &:not(&:last-child){
+    &:not(&:last-child) {
       width: 100%;
       max-width: 385px;
       margin-bottom: 5px;
     }
+    @include adaptiv-value(font-size, 30, 18, 1);
   }
 }

@@ -12,7 +12,8 @@
   }
 
   &__wrapper {
-    background: url(../img/delivery/delivery-bg.png) no-repeat bottom right / auto,
+    background:
+      url(../img/delivery/delivery-bg.png) no-repeat bottom right / auto,
       linear-gradient(291.53deg, #fecf3d 3.56%, #6b9d52 69.58%);
     padding: 45px 75px;
 
@@ -23,12 +24,12 @@
   }
 
   &__block-title {
-    @include adaptiv-value(font-size, 40, 30, 1);
     font-weight: 400;
     color: #fff;
     line-height: 1em;
     text-transform: uppercase;
     margin-bottom: 25px;
+    @include adaptiv-value(font-size, 40, 30, 1);
 
     @media (max-width: (map.get($breakpoints, "lg") - 0.02)) {
       text-align: center;

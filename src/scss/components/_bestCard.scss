@@ -38,19 +38,18 @@
 
   &__title {
     font-weight: 400;
-    @include adaptiv-value(font-size, 40, 25, 1);
     line-height: 1em;
     text-transform: uppercase;
     margin: 20px 0 10px;
     transition: color 0.3s ease-out;
     white-space: nowrap;
     text-align: center;
+    @include adaptiv-value(font-size, 40, 25, 1);
   }
 
   &__descr {
     position: relative;
     font-weight: 400;
-    @include adaptiv-value(font-size, 25, 20, 1);
     line-height: 1em;
     color: #797272;
     margin-bottom: 15px;
@@ -62,6 +61,7 @@
       bottom: 0;
       right: 0;
     }
+    @include adaptiv-value(font-size, 25, 20, 1);
   }
 
   &__price-wrapper {
@@ -78,7 +78,6 @@
   &__price {
     position: relative;
     font-weight: 400;
-    @include adaptiv-value(font-size, 40, 30, 1);
     line-height: 1em;
     text-transform: uppercase;
     padding-right: 28px;
@@ -94,6 +93,7 @@
       bottom: 0;
       right: 0;
     }
+    @include adaptiv-value(font-size, 40, 30, 1);
   }
 
   &__price-btn {
@@ -125,7 +125,9 @@
     color: #fff;
     background-color: $c-font;
     border-radius: 30px;
-    transition: color, background-color 0.3s ease-out;
+    transition:
+      color,
+      background-color 0.3s ease-out;
     cursor: pointer;
 
     &:hover {
